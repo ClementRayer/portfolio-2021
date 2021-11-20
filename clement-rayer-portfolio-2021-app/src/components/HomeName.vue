@@ -10,6 +10,7 @@
             </div>
         </div>
         <div id="subtext">
+			<p id="h2-outline">Développeur web - designer - chef de projet</p>
             <h2>Développeur web - designer - chef de projet</h2>
             <router-link to="/about">
                 <img
@@ -23,14 +24,10 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import anime from "animejs";
 
 export default {
 	name: "HomeName",
-	// components: {
-	//   HelloWorld
-	// }
 	mounted() {
 		///////////////////////////////////////
 		// HOME CIRCLES ANIMATION
@@ -42,23 +39,22 @@ export default {
 		function setInitialBackgroundCircles() {
 			circleOne.setAttribute(
 				"style",
-				"background: radial-gradient(rgba(255,0,0,0.3) 0%, rgba(192,92,188,0.3) 100%)"
+				"background: radial-gradient(rgba(243,0,24,0.3) 0%, rgba(243,0,24,0.8) 100%)"
 			);
 			circleTwo.setAttribute(
 				"style",
-				"background: radial-gradient(rgba(0,255,0,0.3) 0%, rgba(100,92,192,0.3) 100%)"
+				"background: radial-gradient(rgba(18,0,43,0.3) 0%, rgba(18,0,43,0.8) 100%)"
 			);
 			circleThree.setAttribute(
 				"style",
-				"background: radial-gradient(rgba(0,0,255,0.3) 0%, rgba(122, 108, 80, 0.3) 100%)"
+				"background: radial-gradient(rgba(0,177,102,0.3) 0%, rgba(0,177,102,0.8) 100%)"
 			);
 		}
 
 		window.onload = setInitialBackgroundCircles();
 
 		// Animation core
-		// eslint-disable-next-line no-unused-vars
-		var backgroundCirclesColor = anime
+		anime
 			.timeline({
 				easing: "linear",
 				direction: "alternate",
@@ -74,11 +70,11 @@ export default {
 					keyframes: [
 						{
 							background:
-								"radial-gradient(rgba(0,0,0,0.5) 0%, rgba(255,0,255,1) 100%)",
+								"radial-gradient(rgba(243,0,24,0.3) 0%, rgba(243,0,24,0.4) 100%)",
 						},
 						{
 							background:
-								"radial-gradient(rgba(60,120,200,1) 0%, rgba(34,92,10,1) 100%)",
+								"radial-gradient(rgba(243,0,24,0.8) 0%, rgba(243,0,24,0.9) 100%)",
 						},
 					],
 				},
@@ -94,11 +90,11 @@ export default {
 					keyframes: [
 						{
 							background:
-								"radial-gradient(rgba(74,183,22,1) 0%, rgba(100,92,192,1) 100%)",
+								"radial-gradient(rgba(18,0,43,0.3) 0%, rgba(18,0,43,0.4) 100%)",
 						},
 						{
 							background:
-								"radial-gradient(rgba(143,34,200,1) 0%, rgba(180,240,46,1) 100%)",
+								"radial-gradient(rgba(18,0,43,0.8) 0%, rgba(18,0,43,0.9) 100%)",
 						},
 					],
 					delay: 333,
@@ -115,11 +111,11 @@ export default {
 					keyframes: [
 						{
 							background:
-								"radial-gradient(rgba(22,183,183,1) 0%, rgba(122, 108, 80, 1) 100%)",
+								"radial-gradient(rgba(0,177,102,0.3) 0%, rgba(0,177,102,0.4) 100%)",
 						},
 						{
 							background:
-								"radial-gradient(rgba(250,30,70,.7) 0%, rgba(255, 10, 220, .7) 100%)",
+								"radial-gradient(rgba(0,177,102,0.8) 0%, rgba(0,177,102,0.9) 100%)",
 						},
 					],
 					delay: 666,
@@ -132,11 +128,7 @@ export default {
 
 <style lang="scss">
 #home-body {
-	background: radial-gradient(
-			103.8% 103.8% at 50% 50%,
-			#2562ff 0%,
-			#ff4141 100%
-		),#353131;
+	background-image: url('../../public/portfolio-bg.png');
 	height: 100vh;
 	.bg-circles-container {
 		height: 60vh;
@@ -192,13 +184,22 @@ export default {
 	#subtext {
 		margin-top: 9vh;
 		text-align: center;
-		h2 {
+		h2, #h2-outline {
 			margin-top: 0;
 			font-family: "Fugaz One", cursive;
 			font-size: 2.5rem;
 			text-transform: uppercase;
 			color: transparent;
 			-webkit-text-stroke: 0.1px #ffffff;
+			mix-blend-mode: normal;
+		}
+		#h2-outline{
+			position: absolute;
+			width: 100vw;
+			text-align: center;
+			mix-blend-mode: multiply;
+			color: #00ffa3;
+			z-index: 10;
 		}
 		#down-arrow {
 			width: 3.2vw;

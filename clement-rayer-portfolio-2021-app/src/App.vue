@@ -20,7 +20,12 @@ body{
 }
 #app {
     @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
     margin: 0;
     padding: 0;
+    a{
+        color: #ffffff;
+        text-decoration: none;
+    }
 }
 </style>
