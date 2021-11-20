@@ -207,4 +207,26 @@ export default {
 		}
 	}
 }
+@media screen and (max-width: 1025px) {
+	#home-body {
+		.bg-circles-container {
+			#name-container {
+				#name-outline{
+					font-size: 6rem;
+				}
+				#name{
+					font-size: 6rem;
+				}
+				#name::before{
+					font-size: 5.9rem;
+				}
+			}
+		}
+		#subtext {
+			h2, #h2-outline{
+				font-size: 2rem;
+			}
+		}
+	}
+}
 </style>

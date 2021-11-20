@@ -251,4 +251,30 @@ export default {
         }
     }
 }
+@media screen and (max-width: 1025px) {
+    #about-body{
+        #about-background{
+            #about-title, h3{
+                font-size: 2.2rem;
+            }
+            .about-intro{
+                margin-top: 9vh;
+                #about-description{
+                    width: 90%;
+                    margin-left: 5%;
+                    font-size: 1rem;
+                }
+            }
+            #about-infos{
+                margin-top: 8vh;
+                #about-infos-experiences{
+                    #experiences-details{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
 </style>
