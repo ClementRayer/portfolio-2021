@@ -42,4 +42,9 @@ export default {
         font-size: 1.125rem;
     }
 }
+@media screen and (max-width: 415px) {
+    .socials-details-item{
+        margin-left: 0;
+    }
+}
 </style>

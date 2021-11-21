@@ -1,7 +1,6 @@
 <template>
     <div id="about-body">
         <div id="about-container">
-            <div id="about-border"></div>
             <div id="about-background">
                 <div class="about-intro">
                     <p id="about-title">Hey !</p>
@@ -171,18 +170,8 @@ export default {
 
 <style lang="scss">
 #about-body{
-    background: radial-gradient(
-			103.8% 103.8% at 50% 50%,
-			#2562ff 0%,
-			#ff4141 100%
-		),
-		#353131;
-	height: 100vh;
-    #about-border{
-    width: 100vw;
-    height: 100vh;
     background: radial-gradient(103.8% 103.8% at 50% 50%, rgb(0,86,94)  0%, rgb(243,0,24) 100%), #353131;
-    }
+	height: 100vh;
     #about-background{
         position: absolute;
         top: calc(100vh + 50px);
@@ -276,5 +265,52 @@ export default {
         }
     }
 }
-
+@media screen and (max-width: 415px) {
+    #about-body{
+        height: auto;
+        padding: 0.1px 0 20px 0;
+        #about-background{
+            position: inherit;
+            width: calc(100vw - 40px);
+            height: fit-content;
+            margin: 20px 0 0 20px;
+            padding-bottom: 30px;
+            .about-intro{
+                margin-top: 20px;
+                #about-title{
+                    padding-top: 20px;
+                }
+                #about-description{
+                    width: 86.6%;
+                    margin-left: 6.7%;
+                }
+            }
+            h3{
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            #about-infos{
+                margin-top: 8vh;
+                flex-direction: column;
+                align-items: center;
+                #about-infos-socials{
+                    width: 86.6%;
+                    #socials-details{
+                        justify-content: space-around;
+                    }
+                }
+                hr{
+                    display: none;
+                }
+                #about-infos-experiences{
+                    width: 72%;
+                    margin-top: 5vh;
+                    #experiences-details{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
 </style>

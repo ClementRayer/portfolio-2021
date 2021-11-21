@@ -12,13 +12,13 @@
         <div id="subtext">
 			<p id="h2-outline">Développeur web - designer - chef de projet</p>
             <h2>Développeur web - designer - chef de projet</h2>
-            <router-link to="/about">
+            <div @click="scrollToNextScreen" id="arrow-anchor-link">
                 <img
                     src="../../public/down-arrow.svg"
                     alt="Flèche vers le bas, lien pour la suite du contenu"
                     id="down-arrow"
                 />
-            </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -28,6 +28,15 @@ import anime from "animejs";
 
 export default {
 	name: "HomeName",
+	methods: {
+		scrollToNextScreen() {
+			var height = window.innerHeight;
+			window.scrollTo({
+				top: height,
+				behavior: 'smooth'
+			});
+		}
+	},
 	mounted() {
 		///////////////////////////////////////
 		// HOME CIRCLES ANIMATION
@@ -122,7 +131,7 @@ export default {
 				},
 				0
 			);
-	},
+	}
 };
 </script>
 
@@ -130,6 +139,7 @@ export default {
 #home-body {
 	background-image: url('../../public/portfolio-bg.png');
 	height: 100vh;
+	width: 100vw;
 	.bg-circles-container {
 		height: 60vh;
 		padding-top: 10vh;
@@ -138,14 +148,12 @@ export default {
 		align-items: center;
 		.bg-circle {
 			width: 60vh;
-			border-radius: 10000px;
+			border-radius: 100%;
 			flex-shrink: 0;
 			height: 100%;
+			background-color: rgba(0, 255, 0, 0.3);
 		}
-		#circle-two {
-			margin-left: -35vh;
-		}
-		#circle-three {
+		#circle-two, #circle-three {
 			margin-left: -35vh;
 		}
 		#name-container {
@@ -173,7 +181,7 @@ export default {
 				content: "CLÉMENT RAYER";
 				color: #ffffff;
 				font-size: 6.9rem;
-				margin-left: 0.4rem;
+				margin: 0.2rem 0 0 0.4rem;
 				text-align: center;
 				mix-blend-mode: normal;
 				position: absolute;
@@ -201,9 +209,12 @@ export default {
 			color: #00ffa3;
 			z-index: 10;
 		}
-		#down-arrow {
-			width: 3.2vw;
-			margin: 4vh 0 0 0;
+		#arrow-anchor-link{
+			cursor: pointer;
+			#down-arrow {
+				width: 3.2vw;
+				margin: 4vh 0 0 0;
+			}
 		}
 	}
 }
@@ -228,5 +239,99 @@ export default {
 			}
 		}
 	}
+}
+@media screen and (max-width: 415px) {
+	#home-body {
+		.bg-circles-container {
+			height: fit-content;
+			padding-top: 5vh;
+			flex-direction: column;
+			.bg-circle{
+				width: 80vw;
+				height: 80vw;
+			}
+			#circle-two, #circle-three {
+				margin: -60vw 0 0 0;
+			}
+			#name-container {
+				#name-outline{
+					font-size: 3.5rem;
+				}
+				#name{
+					font-size: 3.5rem;
+				}
+				#name::before{
+					font-size: 3.4rem;
+					margin: 0.2rem 0 0 -3.5rem;
+				}
+			}
+		}
+		#subtext {
+			margin-top: 4vh;
+			h2, #h2-outline{
+				width: 80%;
+				margin-left: 10%;
+				font-size: 1.5rem;
+			}
+			#h2-outline{
+				color: #313535;
+				mix-blend-mode: normal;
+			}
+			#arrow-anchor-link{
+				#down-arrow{
+					width: 15vw;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 376px) and (min-height: 720px){
+	#home-body {
+		.bg-circles-container {
+			.bg-circle{
+				width: 85vw;
+				height: 85vw;
+			}
+			#circle-two, #circle-three {
+				margin: -55vw 0 0 0;
+			}
+		}
+		#subtext{
+			#arrow-anchor-link{
+				#down-arrow{
+					margin-top: 2vh;
+				}
+			}
+		}
+	}	
+}
+@media screen and (max-width: 340px) {
+	#home-body {
+		.bg-circles-container {
+			.bg-circle{
+				width: 75vw;
+				height: 75vw;
+			}
+			#circle-two, #circle-three {
+				margin: -55vw 0 0 0;
+			}
+			#name-container{
+				#name::before{
+					margin-left: -1.5rem;
+				}
+			}
+		}
+		#subtext{
+			h2, #h2-outline{
+				font-size: 1.25rem;
+			}
+			#arrow-anchor-link{
+				#down-arrow{
+					margin-top: 0;
+				}
+			}
+		}
+	}	
 }
 </style>
