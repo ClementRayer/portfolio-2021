@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import HomeName from '../components/HomeName'
-import HomeAbout from '../components/HomeAbout'
+import HomeName from '../components/HomeName.vue'
+import HomeAbout from '../components/HomeAbout.vue'
 
 export default {
 	name: "Home",
