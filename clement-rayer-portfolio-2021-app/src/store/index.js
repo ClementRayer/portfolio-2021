@@ -4,6 +4,7 @@ export default createStore({
   state: {
     projectList: [
       {
+        id: 0,
         name: "Ranking NBA",
         type: "Projet personnel",
         date: 2021,
@@ -21,6 +22,7 @@ export default createStore({
         url: 'https://clementrayer.fr/nba-ranking'
       },
       {
+        id: 1,
         name: "La youtuberie",
         type: "Projet personnel",
         date: 2021,
@@ -38,6 +40,7 @@ export default createStore({
         url: 'https://clementrayer.fr/nba-ranking'
       },
       {
+        id : 2,
         name: "Beway",
         type: "Freelance",
         date: 2020,
@@ -55,6 +58,7 @@ export default createStore({
         url: 'https://clementrayer.fr/nba-ranking'
       },
       {
+        id: 3,
         name: "Stellaria",
         type: "Projet étudiant",
         date: 2017,
@@ -72,6 +76,7 @@ export default createStore({
         url: 'https://clementrayer.fr/nba-ranking'
       },
       {
+        id: 4,
         name: "Wouah ce projet a un nom maxi long vie de oim",
         type: "Projet personnel",
         date: 2021,

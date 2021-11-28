@@ -4,11 +4,12 @@
     <div class="projects">
       <ProjectItem 
         v-for="item in projectList"
+        :id="item.id"
         :thumbnail="item.thumbnail"
         :name="item.name"
         :type="item.type"
         :date="item.date"
-        :key="item.name"
+        :key="item.id"
       />
     </div>
   </div>
@@ -44,6 +45,35 @@ export default {
   .projects{
     width: 88vw;
     margin: 0 6vw;
+  }
+}
+@media screen and (max-width: 1025px) {
+  #projects-body{
+    h1{
+      margin: 7vh 0;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  #projects-body{
+    h1{
+      font-size: 7rem;
+    }
+  }
+}
+@media screen and (max-width: 415px) {
+  #projects-body{
+    h1{
+      font-size: 4.5rem;
+      margin: 10vh 0;
+    }
+  }
+}
+@media screen and (max-width: 340px) {
+  #projects-body{
+    h1{
+      font-size: 3.5rem;
+    }
   }
 }
 </style>
