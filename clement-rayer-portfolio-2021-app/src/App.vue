@@ -2,10 +2,14 @@
     <router-view/>
 </template>
 
-<script>
 
+<script>
 export default {
-  name: 'App'
+  name: 'App',
+  created(){
+      document.title = 'Clément Rayer - Développeur, designer, chef de projet'
+    // document.querySelector("meta[name='description']").setAttribute('content', "Hey! Moi c’est Clément, développeur web, designer et chef de projet 👋 Pour voir mes projets ou me contacter, c'est par ici!")
+  }
 }
 </script>
 

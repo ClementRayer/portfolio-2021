@@ -1,22 +1,24 @@
 <template>
-    <div class="project-item" @mouseenter="setImages()" @mouseleave="removeImages()">
-        <div class="project-item-content">
-            <div class="project-item-logo" ref="logo">
-                <img :src="thumbnail.source" :alt="thumbnail.alt" id="project-thumbnail">
-            </div>
-            <div class="project-item-infos">
-                <div class="project-infos-left">
-                    <span class="project-name">{{ name }}</span>
-                    <span class="project-type" ref="typeDisplay">{{ type }}</span>
+    <router-link :to="{ path: '/project/' + projectPage }"> 
+        <div class="project-item" @mouseenter="setImages()" @mouseleave="removeImages()">
+            <div class="project-item-content">
+                <div class="project-item-logo" ref="logo">
+                    <img :src="thumbnail.source" :alt="thumbnail.alt" id="project-thumbnail">
                 </div>
-                <div class="project-infos-right" ref="dateDisplay">
-                    {{ date }}
+                <div class="project-item-infos">
+                    <div class="project-infos-left">
+                        <span class="project-name">{{ name }}</span>
+                        <span class="project-type" ref="typeDisplay">{{ type }}</span>
+                    </div>
+                    <div class="project-infos-right" ref="dateDisplay">
+                        {{ date }}
+                    </div>
                 </div>
+                <img src="../../public/down-arrow.svg" alt="Voir les informations sur le projet" class="infos-toggle-arrow" @click="toggleItem()" ref="toggleArrow" />
             </div>
-            <img src="../../public/down-arrow.svg" alt="Voir les informations sur le projet" class="infos-toggle-arrow" @click="toggleItem()" ref="toggleArrow" />
+            <hr>
         </div>
-        <hr>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -33,6 +35,10 @@ export default {
             required: true
         },
         name:{
+            type: String,
+            required: true
+        },
+        projectPage:{
             type: String,
             required: true
         },

@@ -6,6 +6,7 @@ export default createStore({
       {
         id: 0,
         name: "Ranking NBA",
+        projectPage: 'ranking-nba',
         type: "Projet personnel",
         date: 2021,
         skills: ["développement front-end", "développement back-end", "design"],
@@ -24,6 +25,7 @@ export default createStore({
       {
         id: 1,
         name: "La youtuberie",
+        projectPage: 'la-youtuberie',
         type: "Projet personnel",
         date: 2021,
         skills: ["développement front-end", "développement back-end", "design"],
@@ -42,6 +44,7 @@ export default createStore({
       {
         id : 2,
         name: "Beway",
+        projectPage: 'beway',
         type: "Freelance",
         date: 2020,
         skills: ["développement front-end", "développement back-end", "design"],
@@ -60,6 +63,7 @@ export default createStore({
       {
         id: 3,
         name: "Stellaria",
+        projectPage: 'stellaria',
         type: "Projet étudiant",
         date: 2017,
         skills: ["développement front-end", "développement back-end", "design"],
@@ -78,6 +82,7 @@ export default createStore({
       {
         id: 4,
         name: "Wouah ce projet a un nom maxi long vie de oim",
+        projectPage: 'maxi-long-vie-de-oim',
         type: "Projet personnel",
         date: 2021,
         skills: ["développement front-end", "développement back-end", "design"],
@@ -93,7 +98,8 @@ export default createStore({
         technicalScope: ["HTML", "CSS", "JS vanilla"],
         url: 'https://clementrayer.fr/nba-ranking'
       }
-    ]
+    ],
+    howManyProjects : 5
   },
   mutations: {
   },

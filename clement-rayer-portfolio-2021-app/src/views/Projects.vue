@@ -7,6 +7,7 @@
         :id="item.id"
         :thumbnail="item.thumbnail"
         :name="item.name"
+        :projectPage="item.projectPage"
         :type="item.type"
         :date="item.date"
         :key="item.id"
@@ -28,7 +29,13 @@ export default {
 		...mapState({
 			projectList : 'projectList'
 		})
-	}
+	},
+  created(){
+      function changeTitle(){
+        document.title = 'Projets - Clément Rayer'
+      }
+      window.onload = changeTitle();
+  }
 }
 </script>
 
