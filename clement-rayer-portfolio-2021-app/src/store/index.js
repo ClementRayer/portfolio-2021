@@ -19,7 +19,12 @@ export default createStore({
           alt: "Visuel du projet Ranking NBA"
         },
         introductionText: "A l'approche de la saison NBA, chacun y va de ses pronostics. Pour vous simplifier la vie, ici il suffit de choisir les équipes dans l'ordre. Vous pouvez même indiquer le nombre de victoires estimées si le coeur vous en dit. Finies les listes tapées à la va-vite et les captures d'écran de bloc-note!",
-        technicalScope: ["HTML", "CSS", "JS vanilla"],
+        basicImagePlusText: {
+          source: "/projets/ranking-nba/nba-cover.png",
+          alt: "Icone projet Ranking NBA",
+          text: "Lorraine Ipsum Moulins-Saint-Hubert, Marainville-sur-Madon Lorry-lès-Metz Errouville, Barbas Montsec Renauvoid Crion Fouchères-aux-Bois Kalhausen Lachapelle Velaines Harol Minorville Flin Dampvitoux Faulquemont Biffontaine Villers-lès-Moivrons Folkling Aboncourt Neuvilly-en-Argonne Sturzelbronn Mont-l'Étroit Lucy, Spicheren, Réméréville Romain Levoncourt. Lavallée Pont-sur-Meuse, Laneuveville-aux-Bois Hergugney Glonville Croismare Fribourg Gosselming Velosnes Hilbesheim Hellering-lès-Fénétrange Châtillon-sur-Saône Lépanges-sur-Vologne Vouthon-Haut Laître-sous-Amance Resson Verdenal Hannocourt Schmittviller Mont-sur-Meurthe Ainvelle Charmes-la-Côte, Le Ménil, Charmois-devant-Bruyères Thierville-sur-Meuse Laneuveville-lès-Lorquin Saint-Menge Saint-Menge Vadonville Raon-sur-Plaine Marre Ancerviller Cousances-lès-Triconville Bérig-Vintrange Chicourt, Menaucourt Manonviller Vervezelle Bitche Saint-Mard Mogeville Marre, Failly."
+        },
+        technicalScope: ["HTML", "CSS", "JS Vanilla"],
         url: 'https://clementrayer.fr/nba-ranking'
       },
       {

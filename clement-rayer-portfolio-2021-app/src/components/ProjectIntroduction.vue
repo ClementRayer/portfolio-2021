@@ -37,8 +37,6 @@ export default {
 
 <style lang="scss" scoped>
 #project-introduction{
-    font-family: "Fugaz One", cursive;
-    color: #ffffff;
     display: flex;
     flex-direction: column;
     h1{

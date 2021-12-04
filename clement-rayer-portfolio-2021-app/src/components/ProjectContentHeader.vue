@@ -33,19 +33,50 @@ export default {
     },
     mounted(){
         anime({
-            targets: '#text-element',
-            strokeDasharray: [500, 0],
-            strokeDashoffset: [500, 0],
-            easing: 'easeInOutSine',
-            duration: 1500
-        })
+            targets: '#black-fade',
+            opacity: [0, 0.6],
+            duration: 800,
+            delay: 200,
+            easing: 'easeOutSine',
+            })
+        anime
+            .timeline({
+                targets: '#text-element',
+            })
+            .add({
+                strokeDashoffset: [550, 0],
+                easing: 'easeInOutSine',
+                // easing: 'steps(5)',
+                delay: 0,
+                duration: 1000
+            },)
+            .add({
+                opacity: [
+                    { value: 1, duration: 100 },
+                    { value: 0.4, duration: 100 },
+                    { value: 1, duration: 100 },
+                    { value: 0.2, duration: 100 },
+                    { value: 1, duration: 100 },
+                ],
+                easing: 'easeInOutSine',
+                duration: 500,
+            }, 0)
+            .add({
+                keyframes: [
+                    {opacity: 1},
+                    {opacity: 0},
+                    {strokeDasharray: 0},
+                    {opacity: 1}
+                ],
+                easing: 'easeInOutSine',
+                duration: 500
+            }, '-=450')
     }
 }
 </script>
 
 <style lang="scss" scoped>
 #project-header{
-    font-family: "Fugaz One", cursive;
     #project-header-background{
         width: 100vw;
         height: 100vh;
@@ -62,34 +93,17 @@ export default {
             background: #000000;
             opacity: 0;
             z-index: 0;
-            animation: opacityAugmentation 1s ease-in forwards;
-        }
-        @keyframes opacityAugmentation {
-            0%{
-                opacity: 0;
-            }
-            30%{
-                opacity: 0;
-            }
-            100% {
-                opacity: 0.5;
-            }
         }
         #text-outline {
             text-transform: uppercase;
             z-index: 1;
             #text-element{
+                opacity: 1;
                 font-size: 7rem;
                 stroke-dasharray: 500;
-                stroke-dashoffset: 500;
-                // animation: dash 1.5s ease-in forwards;
+                stroke-dashoffset: 0;
             }
         }
-            // @keyframes dash {
-            //     to {
-            //         stroke-dashoffset: 0;
-            //     }
-            // }
     }
 }
 </style>

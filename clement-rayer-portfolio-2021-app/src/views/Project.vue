@@ -13,23 +13,44 @@
         :skills="projectToDisplay.skills"
         :introductionText="projectToDisplay.introductionText"
       />
+      <ProjectImagePlusText
+        v-if="projectToDisplay.basicImagePlusText"
+        :key="projectToDisplay.id"
+        :basicImagePlusText="projectToDisplay.basicImagePlusText"
+      />
+      <ProjectTechnicalScope 
+        v-if="projectToDisplay.technicalScope"
+        :key="projectToDisplay.id"
+        :technicalScope="projectToDisplay.technicalScope"
+      />
+      <ProjectFooterLink
+        :key="projectToDisplay.id"
+        :cover="projectToDisplay.cover"
+        :url="projectToDisplay.url"
+      />
   </div>
 </template>
 
 <script>
 import ProjectContentHeader from '../components/ProjectContentHeader.vue'
 import ProjectIntroduction from '../components/ProjectIntroduction.vue'
+import ProjectImagePlusText from '../components/ProjectImagePlusText.vue'
+import ProjectTechnicalScope from '../components/ProjectTechnicalScope.vue'
+import ProjectFooterLink from '../components/ProjectFooterLink.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Project',
   components:{
     ProjectContentHeader,
-    ProjectIntroduction
+    ProjectIntroduction,
+    ProjectImagePlusText,
+    ProjectTechnicalScope,
+    ProjectFooterLink
   },
   data(){
       return{
-        projectToDisplay: null
+        projectToDisplay: null,
       }
   },
   computed: {
@@ -63,4 +84,8 @@ export default {
 </script>
 
 <style lang="scss">
+#projects-body{
+  font-family: "Fugaz One", cursive;
+  color: #ffffff;
+}
 </style>

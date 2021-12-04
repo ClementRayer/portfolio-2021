@@ -1,0 +1,39 @@
+<template>
+    <div id="project-technical-scope">
+        <span id="technical-title">Scope technique</span>
+        <div id="technical-details" v-for="(technology, index) in technicalScope" :key="technology.value">
+            {{ technology }}<span v-if="index < technicalScope.length - 1">,</span>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "ProjectIntroduction",
+    props: {
+        technicalScope:{
+            type: Array,
+            required: true
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+#project-technical-scope{
+    width: 80vw;
+    margin: 13vh auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #technical-title{
+        margin-right: 3.5vw;
+        font-size: 2.3rem;
+    }
+    #technical-details{
+        margin-left: 0.3rem;
+        font-family: 'Sen', sans-serif;
+        font-size: 1.15rem;
+    }
+}
+</style>
