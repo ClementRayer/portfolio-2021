@@ -23,11 +23,17 @@
         :key="projectToDisplay.id"
         :technicalScope="projectToDisplay.technicalScope"
       />
+      <ProjectThreePanels
+        v-if="projectToDisplay.threePanelsDetails"
+        :key="projectToDisplay.id"
+        :threePanelsDetails="projectToDisplay.threePanelsDetails"
+      />
       <ProjectFooterLink
         :key="projectToDisplay.id"
         :cover="projectToDisplay.cover"
         :url="projectToDisplay.url"
       />
+      <ProjectFooterReturn />
   </div>
 </template>
 
@@ -36,7 +42,9 @@ import ProjectContentHeader from '../components/ProjectContentHeader.vue'
 import ProjectIntroduction from '../components/ProjectIntroduction.vue'
 import ProjectImagePlusText from '../components/ProjectImagePlusText.vue'
 import ProjectTechnicalScope from '../components/ProjectTechnicalScope.vue'
+import ProjectThreePanels from '../components/ProjectThreePanels.vue'
 import ProjectFooterLink from '../components/ProjectFooterLink.vue'
+import ProjectFooterReturn from '../components/ProjectFooterReturn.vue'
 import { mapState } from 'vuex'
 
 export default {
@@ -46,7 +54,9 @@ export default {
     ProjectIntroduction,
     ProjectImagePlusText,
     ProjectTechnicalScope,
-    ProjectFooterLink
+    ProjectThreePanels,
+    ProjectFooterLink,
+    ProjectFooterReturn
   },
   data(){
       return{

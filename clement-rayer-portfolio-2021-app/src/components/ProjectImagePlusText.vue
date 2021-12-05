@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: "ProjectIntroduction",
+    name: "ProjectImagePlusText",
     props: {
         basicImagePlusText:{
             type: Object,

@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name: "ProjectIntroduction",
+    name: "ProjectFooterLink",
     props: {
         cover:{
             type: Object,

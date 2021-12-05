@@ -25,6 +25,26 @@ export default createStore({
           text: "Lorraine Ipsum Moulins-Saint-Hubert, Marainville-sur-Madon Lorry-lès-Metz Errouville, Barbas Montsec Renauvoid Crion Fouchères-aux-Bois Kalhausen Lachapelle Velaines Harol Minorville Flin Dampvitoux Faulquemont Biffontaine Villers-lès-Moivrons Folkling Aboncourt Neuvilly-en-Argonne Sturzelbronn Mont-l'Étroit Lucy, Spicheren, Réméréville Romain Levoncourt. Lavallée Pont-sur-Meuse, Laneuveville-aux-Bois Hergugney Glonville Croismare Fribourg Gosselming Velosnes Hilbesheim Hellering-lès-Fénétrange Châtillon-sur-Saône Lépanges-sur-Vologne Vouthon-Haut Laître-sous-Amance Resson Verdenal Hannocourt Schmittviller Mont-sur-Meurthe Ainvelle Charmes-la-Côte, Le Ménil, Charmois-devant-Bruyères Thierville-sur-Meuse Laneuveville-lès-Lorquin Saint-Menge Saint-Menge Vadonville Raon-sur-Plaine Marre Ancerviller Cousances-lès-Triconville Bérig-Vintrange Chicourt, Menaucourt Manonviller Vervezelle Bitche Saint-Mard Mogeville Marre, Failly."
         },
         technicalScope: ["HTML", "CSS", "JS Vanilla"],
+        threePanelsDetails:{
+          1: {
+            title: "detail #1",
+            source: "/projets/ranking-nba/nba-cover.png",
+            alt: "Icone projet Ranking NBA",
+            description: "Lorraine Ipsum Moulins-Saint-Hubert, Marainville-sur-Madon Lorry-lès-Metz Errouville, Barbas Montsec Renauvoid Crion Fouchères-aux-Bois Kalhausen Lachapelle Velaines Harol"
+          },
+          2: {
+            title: "detail #2",
+            source: "/projets/ranking-nba/nba-cover.png",
+            alt: "Icone projet Ranking NBA",
+            description: "Lorraine Ipsum Moulins-Saint-Hubert, Marainville-sur-Madon Lorry-lès-Metz Errouville, Barbas Montsec Renauvoid Crion Fouchères-aux-Bois Kalhausen Lachapelle Velaines Harol"
+          },
+          3: {
+            title: "detail #3",
+            source: "/projets/ranking-nba/nba-cover.png",
+            alt: "Icone projet Ranking NBA",
+            description: "Lorraine Ipsum Moulins-Saint-Hubert, Marainville-sur-Madon Lorry-lès-Metz Errouville, Barbas Montsec Renauvoid Crion Fouchères-aux-Bois Kalhausen Lachapelle Velaines Harol. Lorraine Ipsum Moulins-Saint-Hubert, Marainville-sur-Madon Lorry-lès-Metz Errouville, Barbas Montsec Renauvoid Crion Fouchères-aux-Bois Kalhausen Lachapelle Velaines Harol"
+          },
+        },
         url: 'https://clementrayer.fr/nba-ranking'
       },
       {

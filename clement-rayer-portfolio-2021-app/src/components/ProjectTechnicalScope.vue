@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: "ProjectIntroduction",
+    name: "ProjectTechnicalScope",
     props: {
         technicalScope:{
             type: Array,
