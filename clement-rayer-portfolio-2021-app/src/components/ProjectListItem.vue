@@ -25,7 +25,7 @@
 var numberOfImages = 50;
 var viewportWidth = window.innerWidth;
 export default {
-    name: "ProjectItem",
+    name: "ProjectListItem",
     props: {
         id:{
             type: Number

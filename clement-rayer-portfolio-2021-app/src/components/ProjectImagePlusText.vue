@@ -27,10 +27,40 @@ export default {
     justify-content: space-evenly;
     align-items: center;
     #project-image-plus-text-image{
-        width: 43%;
+        width: 47%;
     }
     #project-image-plus-text-text{
-        width: 45%;
+        width: 47%;
+    }
+}
+@media screen and (max-width: 1367px) {
+    #project-image-plus-text{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 1025px) {
+    #project-image-plus-text{
+        font-size: 0.85rem;
+    }
+}
+@media screen and (max-width: 769px) {
+    #project-image-plus-text{
+        margin-top: 7.5vh;
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 415px) {
+    #project-image-plus-text{
+        width: 100vw;
+        flex-direction: column;
+        #project-image-plus-text-image{
+            width: 100%;
+        }
+        #project-image-plus-text-text{
+            width: 80%;
+            margin-top: 2vh;
+            text-align: center;
+        }
     }
 }
 </style>

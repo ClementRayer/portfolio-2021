@@ -195,6 +195,9 @@ export default {
                 a{
                     text-decoration: underline 1px;
                 }
+                a:hover{
+                    text-decoration: none;
+                }
             }
         }
         #about-infos{

@@ -50,4 +50,25 @@ export default {
     align-items: center;
     font-size: 4.5rem;
 }
+@media screen and (max-width: 769px) {
+    #project-footer-return{
+        height: 20vh;
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 415px) {
+    #project-footer-return{
+        font-size: 2.2rem;
+    }
+}
+@media screen and (max-width: 376px){
+    #project-footer-return{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 350px){
+    #project-footer-return{
+        font-size: 1.7rem;
+    }
+}
 </style>

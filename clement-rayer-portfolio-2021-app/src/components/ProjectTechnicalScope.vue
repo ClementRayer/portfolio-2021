@@ -36,4 +36,20 @@ export default {
         font-size: 1.15rem;
     }
 }
+@media screen and (max-width: 769px) {
+    #project-technical-scope{
+        margin-top: 7.5vh;
+    }
+}
+@media screen and (max-width: 415px) {
+    #project-technical-scope{
+        flex-wrap: wrap;
+        #technical-title{
+            width: 100%;
+            margin: 0 0 1vh 0;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+    }
+}
 </style>

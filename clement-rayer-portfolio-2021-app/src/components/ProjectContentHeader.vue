@@ -84,6 +84,7 @@ export default {
         align-items: center;
         justify-content: center;
         background-size: cover;
+        background-position: top center;
         #black-fade{
             width: 100%;
             height: 100%;
@@ -102,6 +103,42 @@ export default {
                 font-size: 7rem;
                 stroke-dasharray: 500;
                 stroke-dashoffset: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: 769px) {
+    #project-header{
+        #project-header-background{
+            #text-outline {
+                #text-element{
+                    font-size: 5rem;
+                    stroke-width: 3;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 415px) {
+    #project-header{
+        #project-header-background{
+            #text-outline {
+                #text-element{
+                    font-size: 2.5rem;
+                    stroke-width: 1.5;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 340px) {
+    #project-header{
+        #project-header-background{
+            #text-outline {
+                #text-element{
+                    font-size: 2rem;
+                    stroke-width: 1;
+                }
             }
         }
     }

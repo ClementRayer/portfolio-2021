@@ -2,7 +2,7 @@
   <div id="projects-body">
     <h1>PROJETS</h1>
     <div class="projects">
-      <ProjectItem 
+      <ProjectListItem 
         v-for="item in projectList"
         :id="item.id"
         :thumbnail="item.thumbnail"
@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import ProjectItem from '../components/ProjectItem.vue'
+import ProjectListItem from '../components/ProjectListItem.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Projects',
   components:{
-    ProjectItem
+    ProjectListItem
   },
   computed: {
 		...mapState({

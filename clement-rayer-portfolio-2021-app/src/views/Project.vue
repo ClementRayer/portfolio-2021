@@ -81,14 +81,14 @@ export default {
                 break
             }
         }
+      },
+      changeTitle(){
+        document.title = `${this.projectToDisplay.name} - Clément Rayer`
       }
   },
   created(){
-      function changeTitle(){
-        document.title = 'Projets - Clément Rayer'
-      }
-      window.onload = changeTitle();
       this.getProject()
+      this.changeTitle();
   }
 }
 </script>
@@ -98,4 +98,7 @@ export default {
   font-family: "Fugaz One", cursive;
   color: #ffffff;
 }
+// @media screen and (max-width: 415px) {
+// @media screen and (max-width: 376px) and (min-height: 720px){
+// @media screen and (max-width: 340px) {
 </style>
