@@ -8,7 +8,7 @@
                         Moi c’est Clément, développeur web, designer et chef de projet 👋<br>
                         Je touche un peu à tout, mais mon objectif c’est de me concentrer sur le développement web, en freelance et en entreprise<br>
                         En complément des informations ci-dessous, vous pouvez retrouver mes différents projets <router-link to="/projects" class="link-hover">ici</router-link><br>
-                        N’hésitez pas à <router-link to="/contact" class="link-hover">me contacter</router-link> pour toute demande 😉<br>
+                        N’hésitez pas à me contacter pour toute demande 😉<br>
                     </p>
                 </div>
                 <div id="about-infos">

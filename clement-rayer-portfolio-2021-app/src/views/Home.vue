@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
+::-webkit-scrollbar {
+    display: none;
+}
 </style>
