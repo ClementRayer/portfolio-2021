@@ -51,6 +51,7 @@
 <script>
 import HomeAboutSocials from '../components/HomeAboutSocials.vue'
 import HomeAboutExperiences from '../components/HomeAboutExperiences.vue'
+import { mapState } from 'vuex'
 // import anime from "animejs";
 
 export default {
@@ -61,26 +62,6 @@ export default {
     },
     data() {
         return {
-            socialsList: [
-                {
-                    link: 'https://www.linkedin.com/in/clement-rayer/',
-                    title: 'Linkedin',
-                    source: "linkedin-logo.png",
-                    alt: 'Linkedin Logo'
-                },
-                {
-                    link: 'mailto:clement.rayer@gmail.com',
-                    title: 'Mail',
-                    source: "mail-logo.png",
-                    alt: 'Mail Logo'
-                    },
-                {
-                    link: 'https://github.com/ClementRayer',
-                    title: 'GitHub',
-                    source: "github-logo.png",
-                    alt: 'GitHub Logo'
-                }
-            ],
             experiencesList: [
                 {
                     id: 1,
@@ -108,6 +89,11 @@ export default {
                 }
             ]
         }
+    },    
+    computed: {
+        ...mapState({
+            socialsList : 'socialsList'
+        })
     },
     // methods: {
     //     prout : function (ya){
