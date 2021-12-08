@@ -13,17 +13,20 @@
         :key="item.id"
       />
     </div>
+    <BurgerMenu />
   </div>
 </template>
 
 <script>
 import ProjectListItem from '../components/ProjectListItem.vue'
+import BurgerMenu from '../components/BurgerMenu.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Projects',
   components:{
-    ProjectListItem
+    ProjectListItem,
+    BurgerMenu
   },
   computed: {
 		...mapState({
@@ -50,8 +53,8 @@ export default {
 		-webkit-text-stroke: 1px #ffffff;
   }
   .projects{
-    width: 88vw;
-    margin: 0 6vw;
+    width: 84vw;
+    margin: 0 8vw;
   }
 }
 @media screen and (max-width: 1025px) {

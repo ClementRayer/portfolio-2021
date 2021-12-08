@@ -34,6 +34,7 @@
         :url="projectToDisplay.url"
       />
       <ProjectFooterReturn />
+      <BurgerMenu />
   </div>
 </template>
 
@@ -45,6 +46,7 @@ import ProjectTechnicalScope from '../components/ProjectTechnicalScope.vue'
 import ProjectThreePanels from '../components/ProjectThreePanels.vue'
 import ProjectFooterLink from '../components/ProjectFooterLink.vue'
 import ProjectFooterReturn from '../components/ProjectFooterReturn.vue'
+import BurgerMenu from '../components/BurgerMenu.vue'
 import { mapState } from 'vuex'
 
 export default {
@@ -56,7 +58,8 @@ export default {
     ProjectTechnicalScope,
     ProjectThreePanels,
     ProjectFooterLink,
-    ProjectFooterReturn
+    ProjectFooterReturn,
+    BurgerMenu
   },
   data(){
       return{
@@ -98,7 +101,4 @@ export default {
   font-family: "Fugaz One", cursive;
   color: #ffffff;
 }
-// @media screen and (max-width: 415px) {
-// @media screen and (max-width: 376px) and (min-height: 720px){
-// @media screen and (max-width: 340px) {
 </style>
