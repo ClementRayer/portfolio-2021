@@ -3,9 +3,27 @@
         <div id="burger-menu-cta" @click="toggleMenu"></div>
         <div id="burger-menu-content">
             <div id="burger-menu-links">
-                <router-link to="/" @click="forceCloseMenu">Accueil</router-link>
-                <router-link to="/" @click="scrollToNextScreen">A propos</router-link>
-                <router-link to="/projects">Projets</router-link>
+                <div class="burger-menu-links-item-container">
+                    <span class="animated-line top-line top-line-first"></span>
+                    <span class="animated-line top-line top-line-second"></span>
+                    <span class="animated-line bottom-line bottom-line-first"></span>
+                    <span class="animated-line bottom-line bottom-line-second"></span>
+                    <router-link to="/" @click="forceCloseMenu" class="burger-menu-links-item">Accueil</router-link>
+                </div>
+                <div class="burger-menu-links-item-container">
+                    <span class="animated-line top-line top-line-first"></span>
+                    <span class="animated-line top-line top-line-second"></span>
+                    <span class="animated-line bottom-line bottom-line-first"></span>
+                    <span class="animated-line bottom-line bottom-line-second"></span>
+                    <router-link to="/" @click="scrollToNextScreen" class="burger-menu-links-item">A propos</router-link>
+                </div>
+                <div class="burger-menu-links-item-container">
+                    <span class="animated-line top-line top-line-first"></span>
+                    <span class="animated-line top-line top-line-second"></span>
+                    <span class="animated-line bottom-line bottom-line-first"></span>
+                    <span class="animated-line bottom-line bottom-line-second"></span>
+                    <router-link to="/projects" class="burger-menu-links-item">Projets</router-link>
+                </div>
             </div>
             <div id="burger-menu-contact">
                 <BurgerMenuSocials
@@ -71,7 +89,7 @@ export default {
         top: 10vh;
         right: 4.5vw;
         background: url('../../public/burger-menu.svg');
-        transition: 500ms ease-out;
+        transition: 400ms ease-out;
     }
     #burger-menu-content{
         height: 10vh;
@@ -83,7 +101,7 @@ export default {
         font-size: 3rem;
         background-color: #000000;
         text-transform: uppercase;
-        transition: 500ms ease-out;
+        transition: 400ms ease-out;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -91,12 +109,53 @@ export default {
             width: 50%;
             display: flex;
             justify-content: space-between;
-            a{
-                color: transparent;
-                -webkit-text-stroke: 1px #ffffff;
+            .burger-menu-links-item-container{
+                position: relative;
+                width: 30%;
+                text-align: center;
+                overflow: hidden;
+                .animated-line{
+                    width: 100%;
+                    height: 1vh;
+                    position: absolute;
+                    left: 0;
+                    background: #ffffff;
+                    display: none;
+                }
+                .top-line{
+                    top: 0;
+                }
+                .top-line-first{
+                    animation: 500ms roll-effect linear infinite;
+                }
+                .top-line-second{
+                    left: -105%;
+                    animation: 500ms roll-effect 45ms linear infinite;
+                }
+                .bottom-line{
+                    top: 9vh;
+                }
+                .bottom-line-first{
+                    animation: 500ms roll-effect-reverse linear infinite;
+                }
+                .bottom-line-second{
+                    left: 105%;
+                    animation: 500ms roll-effect-reverse 45ms linear infinite;
+                }
+                .burger-menu-links-item{
+                    height: 10vh;
+                    line-height: 10vh;
+                    color: transparent;
+                    -webkit-text-stroke: 1px #ffffff;
+                    &:hover{
+                        color: #ffffff;
+                        -webkit-text-stroke: none;
+                    }
+                }
                 &:hover{
-                    color: #ffffff;
-                    -webkit-text-stroke: none;
+                    .animated-line{
+                        display: block;
+                    }
                 }
             }
         }
@@ -112,5 +171,33 @@ export default {
     #burger-menu-content{
         transform: translateY(10vh);
     }
+}
+@keyframes roll-effect {
+  0% {
+    transform:translateX(0);
+  }
+  99.99%
+  {
+    transform:translateX(115%);
+    opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: translateX(0);
+  }
+}
+@keyframes roll-effect-reverse {
+  0% {
+    transform:translateX(0);
+  }
+  99.99%
+  {
+    transform:translateX(-115%);
+    opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: translateX(0);
+  }
 }
 </style>
