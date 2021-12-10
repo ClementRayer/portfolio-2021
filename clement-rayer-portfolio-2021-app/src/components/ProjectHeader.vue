@@ -13,7 +13,7 @@
 import anime from "animejs";
 
 export default {
-    name: "ProjectContentHeader",
+    name: "ProjectHeader",
     props: {
         name:{
             type: String,
