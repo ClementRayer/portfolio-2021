@@ -1,5 +1,5 @@
 <template>
-    <div class="burger-menu" :class="{'burger-menu-opened' : opened}">
+    <div class="burger-menu" :class="{'burger-menu-opened' : burgerMenuOpen}">
         <div id="burger-menu-cta" @click="toggleMenu"></div>
         <div id="burger-menu-content">
             <div id="burger-menu-links">
@@ -15,14 +15,14 @@
                     <span class="animated-line top-line top-line-second"></span>
                     <span class="animated-line bottom-line bottom-line-first"></span>
                     <span class="animated-line bottom-line bottom-line-second"></span>
-                    <router-link to="/" @click="scrollToNextScreen" class="burger-menu-links-item">A propos</router-link>
+                    <span @click="scrollToNextScreen" class="burger-menu-links-item">A propos</span>
                 </div>
                 <div class="burger-menu-links-item-container">
                     <span class="animated-line top-line top-line-first"></span>
                     <span class="animated-line top-line top-line-second"></span>
                     <span class="animated-line bottom-line bottom-line-first"></span>
                     <span class="animated-line bottom-line bottom-line-second"></span>
-                    <router-link to="/projects" class="burger-menu-links-item">Projets</router-link>
+                    <router-link to="/projects" @click="forceCloseMenu" class="burger-menu-links-item">Projets</router-link>
                 </div>
             </div>
             <div id="burger-menu-contact">
@@ -50,27 +50,34 @@ export default {
     },
     data(){
         return{
-            opened : false
+            opened : false,
+            onAnchor : false
         }
     },
     computed: {
         ...mapState({
+            burgerMenuOpen : 'burgerMenuOpen',
             socialsList : 'socialsList'
         })
     },
     methods:{
         toggleMenu(){
-            this.opened = !this.opened
+            this.$store.commit('TOGGLE_MENU');
         },
         forceCloseMenu(){
-            this.opened = false
+            this.$store.commit('FORCE_MENU_CLOSE');
+            this.onAnchor = false;
         },
         scrollToNextScreen() {
 			var height = window.innerHeight;
-			window.scrollTo({
-				top: height,
-				behavior: 'smooth'
-			});
+            if(this.onAnchor == false){
+                this.$router.push('/')
+                window.scrollTo({
+                    top: height,
+                    behavior: 'smooth'
+                });
+                this.onAnchor = true;
+            }
             this.toggleMenu()
 		}
     }

@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    burgerMenuOpen: false,
     projectList: [
       {
         id: 0,
@@ -147,6 +148,12 @@ export default createStore({
   ],
   },
   mutations: {
+    TOGGLE_MENU(){
+      this.state.burgerMenuOpen = !this.state.burgerMenuOpen
+    },
+    FORCE_MENU_CLOSE(){
+      this.state.burgerMenuOpen = false;
+    }
   },
   actions: {
   },
