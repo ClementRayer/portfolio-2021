@@ -1,21 +1,7 @@
 <template>
     <div class="burger-menu" :class="{'burger-menu-opened' : burgerMenuOpen}">
         <div id="burger-menu-cta" @click="toggleMenu">
-            <!-- V1 -->
-            <svg id="svg-v1" width="40" height="24" viewBox="0 0 40 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="4,0 36,0 40,4 0,4" id="burger-top-bar" />
-                <polygon points="0,10 40,10 40,14 0,14" id="burger-mid-bar-1" />
-                <polygon points="0,10 40,10 40,14 0,14" id="burger-mid-bar-2" />
-                <polygon points="0,20 40,20 36,24 4,24" id="burger-low-bar" />
-            </svg>
-            <!-- V2 -->
-            <svg id="svg-v2" width="40" height="24" viewBox="0 0 40 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="4,0 20,0 36,0 40,4 20,4 0,4" id="burger-top-bar" />
-                <polygon points="0,10 40,10 40,14 0,14" id="burger-mid-bar" />
-                <polygon points="0,20 20,20 40,20 36,24 20,24 4,24" id="burger-low-bar" />
-            </svg>
-            <!-- V3 -->
-            <svg id="svg-v3" width="40" height="24" viewBox="0 0 40 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+            <svg width="40" height="24" viewBox="0 0 40 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="4,0 20,0 36,0 40,4 20,4 0,4" id="burger-top-bar" />
                 <polygon points="0,10 20,10 20,14 0,14" id="burger-mid-bar-1" />
                 <polygon points="20,10 40,10 40,14 20,14" id="burger-mid-bar-2" />
@@ -25,25 +11,13 @@
         <div id="burger-menu-content">
             <div id="burger-menu-links">
                 <router-link to="/" @click="forceCloseMenu" class="burger-menu-links-item-container">
-                    <span class="animated-line top-line top-line-first"></span>
-                    <span class="animated-line top-line top-line-second"></span>
-                    <span class="animated-line bottom-line bottom-line-first"></span>
-                    <span class="animated-line bottom-line bottom-line-second"></span>
-                    <span class="burger-menu-links-item">Accueil</span>
+                    <BurgerMenuLink buttonText="Accueil" />
                 </router-link>
                 <div class="burger-menu-links-item-container" @click="scrollToAbout">
-                    <span class="animated-line top-line top-line-first"></span>
-                    <span class="animated-line top-line top-line-second"></span>
-                    <span class="animated-line bottom-line bottom-line-first"></span>
-                    <span class="animated-line bottom-line bottom-line-second"></span>
-                    <span class="burger-menu-links-item">A propos</span>
+                    <BurgerMenuLink buttonText="A propos" />
                 </div>
                 <router-link to="/projects" @click="forceCloseMenu"  class="burger-menu-links-item-container">
-                    <span class="animated-line top-line top-line-first"></span>
-                    <span class="animated-line top-line top-line-second"></span>
-                    <span class="animated-line bottom-line bottom-line-first"></span>
-                    <span class="animated-line bottom-line bottom-line-second"></span>
-                    <span class="burger-menu-links-item">Projets</span>
+                    <BurgerMenuLink buttonText="Projets" />
                 </router-link>
             </div>
             <div id="burger-menu-contact">
@@ -61,6 +35,7 @@
 </template>
 
 <script>
+import BurgerMenuLink from '../components/BurgerMenuLink.vue'
 import BurgerMenuSocials from '../components/BurgerMenuSocials.vue'
 import { mapState } from 'vuex'
 import anime from "animejs";
@@ -68,6 +43,7 @@ import anime from "animejs";
 export default {
 	name: "BurgerMenu",
     components:{
+        BurgerMenuLink,
         BurgerMenuSocials
     },
     data(){
@@ -85,12 +61,8 @@ export default {
         toggleMenu(){
             if(this.$store.state.burgerMenuOpen){
                 this.closeBurgerAnimation()
-                this.closeBurgerAnimationV2()
-                this.closeBurgerAnimationV3()
             }else{
                 this.openBurgerAnimation()
-                this.openBurgerAnimationV2()
-                this.openBurgerAnimationV3()
             }
             this.$store.commit('TOGGLE_MENU');
         },
@@ -111,87 +83,9 @@ export default {
             }
             this.toggleMenu()
 		},
-        // V1 //////////////////////////////////////////
         openBurgerAnimation(){
             anime({
-                targets: '#svg-v1 #burger-top-bar',
-                points: [
-                    { value: '4,0 36,0 40,4 0,4' },
-                    { value: '4,0 36,0 36,0 4,0' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v1 #burger-low-bar',
-                points: [
-                    { value: '0,20 40,20 36,24 4,24' },
-                    { value: '4,24 36,24 36,24 4,24' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v1 #burger-mid-bar-1',
-                points: [
-                    { value: '0,10 40,10 40,14 0,14' },
-                    { value: '2,0  39,21 37,24 0,3' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 400
-            })
-            anime({
-                targets: '#svg-v1 #burger-mid-bar-2',
-                points: [
-                    { value: '0,10 0,14 40,14 40,10' },
-                    { value: '1,21 3,24 40,3 38,0' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 400
-            })
-        },
-        closeBurgerAnimation(){
-            anime({
-                targets: '#svg-v1 #burger-top-bar',
-                points: [
-                    { value: '4,0 36,0 36,0 4,0' },
-                    { value: '4,0 36,0 40,4 0,4' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v1 #burger-low-bar',
-                points: [
-                    { value: '4,24 36,24 36,24 4,24' },
-                    { value: '0,20 40,20 36,24 4,24' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v1 #burger-mid-bar-1',
-                points: [
-                    { value: '2,0  39,21 37,24 0,3' },
-                    { value: '0,10 40,10 40,14 0,14' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 400
-            })
-            anime({
-                targets: '#svg-v1 #burger-mid-bar-2',
-                points: [
-                    { value: '1,21 3,24 40,3 38,0 ' },
-                    { value: '0,10 0,14 40,14 40,10' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 400
-            })
-        },
-        // V2 //////////////////////////////////////////
-        openBurgerAnimationV2(){
-            anime({
-                targets: '#svg-v2 #burger-top-bar',
+                targets: '#burger-top-bar',
                 points: [
                     { value: '4,0 20,0 36,0 40,4 20,4 0,4' },
                     { value: '4,1 20,10 36,1 38,4 20,14 2,4' }
@@ -200,7 +94,7 @@ export default {
                 duration: 250
             })
             anime({
-                targets: '#svg-v2 #burger-low-bar',
+                targets: '#burger-low-bar',
                 points: [
                     { value: '0,20 20,20 40,20 36,24 20,24 4,24' },
                     { value: '2,20 20,10 38,20 36,23 20,14 4,23' }
@@ -209,66 +103,7 @@ export default {
                 duration: 250
             })
             anime({
-                targets: '#svg-v2 #burger-mid-bar',
-                points: [
-                    { value: '0,10 40,10 40,14 0,14' },
-                    { value: '20,10 20,10 20,14 20,14' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-        },
-        closeBurgerAnimationV2(){
-            anime({
-                targets: '#svg-v2 #burger-top-bar',
-                points: [
-                    { value: '4,1 20,10 36,1 38,4 20,14 2,4' },
-                    { value: '4,0 20,0 36,0 40,4 20,4 0,4' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v2 #burger-low-bar',
-                points: [
-                    { value: '2,20 20,10 38,20 36,23 20,14 4,23' },
-                    { value: '0,20 20,20 40,20 36,24 20,24 4,24' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v2 #burger-mid-bar',
-                points: [
-                    { value: '20,10 20,10 20,14 20,14' },
-                    { value: '0,10 40,10 40,14 0,14' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-        },
-        // V3 //////////////////////////////////////////
-        openBurgerAnimationV3(){
-            anime({
-                targets: '#svg-v3 #burger-top-bar',
-                points: [
-                    { value: '4,0 20,0 36,0 40,4 20,4 0,4' },
-                    { value: '4,1 20,10 36,1 38,4 20,14 2,4' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v3 #burger-low-bar',
-                points: [
-                    { value: '0,20 20,20 40,20 36,24 20,24 4,24' },
-                    { value: '2,20 20,10 38,20 36,23 20,14 4,23' }
-                ],
-                easing: 'easeOutQuad',
-                duration: 250
-            })
-            anime({
-                targets: '#svg-v3 #burger-mid-bar-1',
+                targets: '#burger-mid-bar-1',
                 points: [
                     { value: '0,10 20,10 20,14 0,14' },
                     { value: '0,10 0,10 0,14 0,14' }
@@ -277,7 +112,7 @@ export default {
                 duration: 250
             })
             anime({
-                targets: '#svg-v3 #burger-mid-bar-2',
+                targets: '#burger-mid-bar-2',
                 points: [
                     { value: '20,10 40,10 40,14 20,14' },
                     { value: '40,10 40,10 40,14 40,14' }
@@ -286,9 +121,9 @@ export default {
                 duration: 250
             })
         },
-        closeBurgerAnimationV3(){
+        closeBurgerAnimation(){
             anime({
-                targets: '#svg-v3 #burger-top-bar',
+                targets: '#burger-top-bar',
                 points: [
                     { value: '4,1 20,10 36,1 38,4 20,14 2,4' },
                     { value: '4,0 20,0 36,0 40,4 20,4 0,4' }
@@ -297,7 +132,7 @@ export default {
                 duration: 250
             })
             anime({
-                targets: '#svg-v3 #burger-low-bar',
+                targets: '#burger-low-bar',
                 points: [
                     { value: '2,20 20,10 38,20 36,23 20,14 4,23' },
                     { value: '0,20 20,20 40,20 36,24 20,24 4,24' }
@@ -306,7 +141,7 @@ export default {
                 duration: 250
             })
             anime({
-                targets: '#svg-v3 #burger-mid-bar-1',
+                targets: '#burger-mid-bar-1',
                 points: [
                     { value: '0,10 0,10 0,14 0,14' },
                     { value: '0,10 20,10 20,14 0,14' }
@@ -315,7 +150,7 @@ export default {
                 duration: 250
             })
             anime({
-                targets: '#svg-v3 #burger-mid-bar-2',
+                targets: '#burger-mid-bar-2',
                 points: [
                     { value: '40,10 40,10 40,14 40,14' },
                     { value: '20,10 40,10 40,14 20,14' }
@@ -324,9 +159,6 @@ export default {
                 duration: 250
             })
         }
-    },
-    mounted(){
-        
     }
 };
 </script>
@@ -341,12 +173,9 @@ export default {
         height: 24px;
         position: fixed;
         top: 6vh;
-        right: 4.5vw;
+        right: 3.5vw;
         z-index: 100;
         transition: 400ms ease-out;
-        #svg-v2, #svg-v3{
-            margin-top: 20px;
-        }
     }
     #burger-menu-content{
         height: 10vh;
@@ -371,44 +200,6 @@ export default {
                 width: 30%;
                 text-align: center;
                 overflow: hidden;
-                .animated-line{
-                    width: 100%;
-                    height: 1vh;
-                    position: absolute;
-                    left: 0;
-                    background: #ffffff;
-                    display: none;
-                }
-                .top-line{
-                    top: 0;
-                }
-                .top-line-first{
-                    animation: 500ms roll-effect linear infinite;
-                }
-                .top-line-second{
-                    left: -105%;
-                    animation: 500ms roll-effect 45ms linear infinite;
-                }
-                .bottom-line{
-                    top: 9vh;
-                }
-                .bottom-line-first{
-                    animation: 500ms roll-effect-reverse linear infinite;
-                }
-                .bottom-line-second{
-                    left: 105%;
-                    animation: 500ms roll-effect-reverse 45ms linear infinite;
-                }
-                .burger-menu-links-item{
-                    height: 10vh;
-                    line-height: 10vh;
-                    color: transparent;
-                    -webkit-text-stroke: 1px #ffffff;
-                    &:hover{
-                        color: #ffffff;
-                        -webkit-text-stroke: none;
-                    }
-                }
                 &:hover{
                     .animated-line{
                         display: block;
@@ -429,33 +220,5 @@ export default {
     #burger-menu-content{
         transform: translateY(10vh);
     }
-}
-@keyframes roll-effect {
-  0% {
-    transform:translateX(0);
-  }
-  99.99%
-  {
-    transform:translateX(115%);
-    opacity: 1;
-  }
-  100%{
-      opacity: 0;
-      transform: translateX(0);
-  }
-}
-@keyframes roll-effect-reverse {
-  0% {
-    transform:translateX(0);
-  }
-  99.99%
-  {
-    transform:translateX(-115%);
-    opacity: 1;
-  }
-  100%{
-      opacity: 0;
-      transform: translateX(0);
-  }
 }
 </style>
