@@ -1,29 +1,36 @@
 <template>
     <div class="burger-menu" :class="{'burger-menu-opened' : burgerMenuOpen}">
-        <div id="burger-menu-cta" @click="toggleMenu"></div>
+        <div id="burger-menu-cta" @click="toggleMenu">
+            <svg width="40" height="24" viewBox="0 0 40 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="4,0 36,0 40,4 0,4" id="burger-top-bar" />
+                <polygon points="0,10 40,10 40,14 0,14" id="burger-mid-bar-1" />
+                <polygon points="0,10 40,10 40,14 0,14" id="burger-mid-bar-2" />
+                <polygon points="0,20 40,20 36,24 4,24" id="burger-low-bar" />
+            </svg>
+        </div>
         <div id="burger-menu-content">
             <div id="burger-menu-links">
-                <div class="burger-menu-links-item-container">
+                <router-link to="/" @click="forceCloseMenu" class="burger-menu-links-item-container">
                     <span class="animated-line top-line top-line-first"></span>
                     <span class="animated-line top-line top-line-second"></span>
                     <span class="animated-line bottom-line bottom-line-first"></span>
                     <span class="animated-line bottom-line bottom-line-second"></span>
-                    <router-link to="/" @click="forceCloseMenu" class="burger-menu-links-item">Accueil</router-link>
-                </div>
-                <div class="burger-menu-links-item-container">
+                    <span class="burger-menu-links-item">Accueil</span>
+                </router-link>
+                <div class="burger-menu-links-item-container" @click="scrollToAbout">
                     <span class="animated-line top-line top-line-first"></span>
                     <span class="animated-line top-line top-line-second"></span>
                     <span class="animated-line bottom-line bottom-line-first"></span>
                     <span class="animated-line bottom-line bottom-line-second"></span>
-                    <span @click="scrollToNextScreen" class="burger-menu-links-item">A propos</span>
+                    <span class="burger-menu-links-item">A propos</span>
                 </div>
-                <div class="burger-menu-links-item-container">
+                <router-link to="/projects" @click="forceCloseMenu"  class="burger-menu-links-item-container">
                     <span class="animated-line top-line top-line-first"></span>
                     <span class="animated-line top-line top-line-second"></span>
                     <span class="animated-line bottom-line bottom-line-first"></span>
                     <span class="animated-line bottom-line bottom-line-second"></span>
-                    <router-link to="/projects" @click="forceCloseMenu" class="burger-menu-links-item">Projets</router-link>
-                </div>
+                    <span class="burger-menu-links-item">Projets</span>
+                </router-link>
             </div>
             <div id="burger-menu-contact">
                 <BurgerMenuSocials
@@ -42,6 +49,7 @@
 <script>
 import BurgerMenuSocials from '../components/BurgerMenuSocials.vue'
 import { mapState } from 'vuex'
+import anime from "animejs";
 
 export default {
 	name: "BurgerMenu",
@@ -50,7 +58,6 @@ export default {
     },
     data(){
         return{
-            opened : false,
             onAnchor : false
         }
     },
@@ -62,13 +69,19 @@ export default {
     },
     methods:{
         toggleMenu(){
+            if(this.$store.state.burgerMenuOpen){
+                this.closeBurgerAnimation()
+            }else{
+                this.openBurgerAnimation()
+            }
             this.$store.commit('TOGGLE_MENU');
         },
         forceCloseMenu(){
             this.$store.commit('FORCE_MENU_CLOSE');
+            this.closeBurgerAnimation();
             this.onAnchor = false;
         },
-        scrollToNextScreen() {
+        scrollToAbout() {
 			var height = window.innerHeight;
             if(this.onAnchor == false){
                 this.$router.push('/')
@@ -79,7 +92,86 @@ export default {
                 this.onAnchor = true;
             }
             this.toggleMenu()
-		}
+		},
+        openBurgerAnimation(){
+            anime({
+                targets: '#burger-top-bar',
+                points: [
+                    { value: '4,0 36,0 40,4 0,4' },
+                    { value: '4,0 36,0 36,0 4,0' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 250
+            })
+            anime({
+                targets: '#burger-low-bar',
+                points: [
+                    { value: '0,20 40,20 36,24 4,24' },
+                    { value: '4,24 36,24 36,24 4,24' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 250
+            })
+            anime({
+                targets: '#burger-mid-bar-1',
+                points: [
+                    { value: '0,10 40,10 40,14 0,14' },
+                    { value: '2,0  39,22 37,25 0,3' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 400
+            })
+            anime({
+                targets: '#burger-mid-bar-2',
+                points: [
+                    { value: '0,10 0,14 40,14 40,10' },
+                    { value: '1,22 3,25 40,3 38,0' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 400
+            })
+        },
+        closeBurgerAnimation(){
+            anime({
+                targets: '#burger-top-bar',
+                points: [
+                    { value: '4,0 36,0 36,0 4,0' },
+                    { value: '4,0 36,0 40,4 0,4' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 250
+            })
+            anime({
+                targets: '#burger-low-bar',
+                points: [
+                    { value: '4,24 36,24 36,24 4,24' },
+                    { value: '0,20 40,20 36,24 4,24' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 250
+            })
+            anime({
+                targets: '#burger-mid-bar-1',
+                points: [
+                    { value: '2,0  39,22 37,25 0,3' },
+                    { value: '0,10 40,10 40,14 0,14' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 400
+            })
+            anime({
+                targets: '#burger-mid-bar-2',
+                points: [
+                    { value: '1,22 3,25 40,3 38,0 ' },
+                    { value: '0,10 0,14 40,14 40,10' }
+                ],
+                easing: 'easeOutQuad',
+                duration: 400
+            })
+        }
+    },
+    mounted(){
+        
     }
 };
 </script>
@@ -93,9 +185,9 @@ export default {
         width: 40px;
         height: 24px;
         position: fixed;
-        top: 10vh;
+        top: 6vh;
         right: 4.5vw;
-        background: url('../../public/burger-menu.svg');
+        z-index: 100;
         transition: 400ms ease-out;
     }
     #burger-menu-content{
@@ -168,12 +260,13 @@ export default {
         }
         #burger-menu-contact{
             display: flex;
+            margin-right: 3.5vw;
         }
     }
 }
 .burger-menu-opened{
     #burger-menu-cta{
-        transform: translateY(2vh);
+        transform: translateY(-2vh);
     }
     #burger-menu-content{
         transform: translateY(10vh);
