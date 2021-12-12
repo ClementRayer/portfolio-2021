@@ -125,7 +125,6 @@ export default createStore({
         url: 'https://clementrayer.fr/nba-ranking'
       }
     ],
-    howManyProjects : 5,
     socialsList: [
       {
           link: 'mailto:clement.rayer@gmail.com',

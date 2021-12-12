@@ -82,7 +82,7 @@ export default {
       getProject(){
         var searchedValue = this.$route.params.projectTitle
         var searchPlace = this.$store.state.projectList
-        for(var x = 0; x < this.$store.state.howManyProjects; x++){
+        for(var x = 0; x < this.$store.state.projectList.length; x++){
             /* eslint-disable no-cond-assign */
             if(searchPlace[x].projectPage === searchedValue){
                 // console.log(searchPlace[x].projectPage + '|||||||' + searchedValue)
