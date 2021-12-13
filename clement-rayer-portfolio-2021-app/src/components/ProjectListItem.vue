@@ -196,9 +196,16 @@ export default {
 @media screen and (max-width: 1025px) {
     .project-item{
         .project-item-content{
+            margin: 4.6vh 0 2vh 0;
+            font-size: 3.5rem;
             align-items: center;
             .project-item-infos{
-                margin-top: 0;
+                margin-top: -4vh;
+                .project-infos-left{
+                    .project-type{
+                        font-size: 1.5rem;
+                    }
+                }
             }
         }
         hr{
@@ -209,8 +216,10 @@ export default {
 @media screen and (max-width: 769px) {
     .project-item{
         .project-item-content{
+            margin: 4.6vh 0;
             font-size: 3rem;
             .project-item-infos{
+                margin-top: 0;
                 .project-infos-left{
                     .project-type{
                         font-size: 1.75rem;

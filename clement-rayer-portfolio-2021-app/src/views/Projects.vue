@@ -61,20 +61,21 @@ export default {
   #projects-body{
     h1{
       margin: 7vh 0;
+      font-size: 5rem;
     }
   }
 }
 @media screen and (max-width: 769px) {
   #projects-body{
     h1{
-      font-size: 7rem;
+      font-size: 5rem;
     }
   }
 }
 @media screen and (max-width: 415px) {
   #projects-body{
     h1{
-      font-size: 4.5rem;
+      font-size: 2.5rem;
       margin: 10vh 0;
     }
   }
