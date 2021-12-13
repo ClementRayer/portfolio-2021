@@ -13,11 +13,9 @@
 			<p id="h2-outline">Développeur web - designer - chef de projet</p>
             <h2>Développeur web - designer - chef de projet</h2>
             <div @click="scrollToNextScreen" id="arrow-anchor-link">
-                <img
-                    src="../../public/down-arrow.svg"
-                    alt="Flèche vers le bas, lien pour la suite du contenu"
-                    id="down-arrow"
-                />
+				<svg width="66" height="34" viewBox="0 0 66 34" fill="none" stroke="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="33,3 33,3 33,3 33,3" stroke-width="5" stroke-linecap="round" id="down-arrow"/>
+                </svg>
             </div>
         </div>
     </div>
@@ -131,6 +129,16 @@ export default {
 				},
 				0
 			);
+		anime({
+			targets: '#down-arrow',
+			points: [
+				{ value: '33,3 33,3 33,3 33,3' },
+				{ value: '3,3 33,3 63,3 33,3' },
+				{ value: '3,3 33,30 63,3 33,30' }
+			],
+			easing: 'easeOutQuad',
+			duration: 300
+		})
 	}
 };
 </script>

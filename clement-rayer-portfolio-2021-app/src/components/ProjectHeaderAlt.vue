@@ -14,6 +14,11 @@
                 <div class="animated-text animated-text-full">{{ name }}</div>
             </div>
             <span id="page-title">{{ name }}</span>
+            <div @click="scrollToNextScreen" id="arrow-anchor-link">
+                <svg width="66" height="34" viewBox="0 0 66 34" fill="none" stroke="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="33,3 33,3 33,3 33,3" stroke-width="5" stroke-linecap="round" id="arrow-svg"/>
+                </svg>
+            </div>
         </div>
     </div>
 </template>
@@ -40,6 +45,15 @@ export default {
             }
         }
     },
+    methods: {
+		scrollToNextScreen() {
+			var height = window.innerHeight;
+			window.scrollTo({
+				top: height,
+				behavior: 'smooth'
+			});
+		}
+	},
     mounted(){
         anime
             .timeline({
@@ -82,6 +96,19 @@ export default {
                                 ],
                                 begin: function() {
                                     document.getElementById('page-title').style.color = 'transparent'
+                                },
+                                complete: function(){
+                                    document.getElementById('arrow-anchor-link').style.display = 'block';
+                                    anime({
+                                        targets: '#arrow-svg',
+                                        points: [
+                                            { value: '33,3 33,3 33,3 33,3' },
+                                            { value: '3,3 33,3 63,3 33,3' },
+                                            { value: '3,3 33,30 63,3 33,30' }
+                                        ],
+                                        easing: 'easeOutQuad',
+                                        duration: 300
+                                    })
                                 }
                             })
                         }
@@ -128,25 +155,43 @@ export default {
             display: none;
             opacity: 0;
         }
+        #arrow-anchor-link{
+            cursor: pointer;
+            position: absolute;
+            top: 92vh;
+            display: none;
+            #down-arrow{
+                width: 3.2vw;
+            }
+        }
     }
 }
-// @media screen and (max-width: 769px) {
-//     #project-header{
-//         #project-header-background{
-            
-//         }
-//     }
-// }
-// @media screen and (max-width: 415px) {
-//     #project-header{
-//         #project-header-background{
-//         }
-//     }
-// }
-// @media screen and (max-width: 340px) {
-//     #project-header{
-//         #project-header-background{
-//         }
-//     }
-// }
+@media screen and (max-width: 769px) {
+    #project-header{
+        #project-header-background{
+            #text-container{
+                .animated-text{
+                    font-size: 7vh;
+                }
+            }
+            #page-title{
+                font-size: 5rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 415px) {
+    #project-header{
+        #project-header-background{
+            #text-container{
+                .animated-text{
+                    font-size: 5vh;
+                }
+            }
+            #page-title{
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
 </style>
