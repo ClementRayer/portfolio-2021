@@ -182,7 +182,7 @@ export default {
     .project-item{
         .project-item-content{
             margin: 4.6vh 0;
-            font-size: 5rem;
+            font-size: 4rem;
             .project-item-infos{
                 .project-infos-left{
                     .project-type{

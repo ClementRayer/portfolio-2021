@@ -229,6 +229,34 @@ export default {
         }
     }
 }
+@media screen and (max-width: 1367px) {
+    #about-body{
+        #about-background{
+            top: calc(100vh + 40px);
+            left: 45px;
+            width: calc(100vw - 80px);
+            height: calc(100vh - 80px);
+            #about-title, h3{
+                font-size: 2.5rem;
+            }
+            .about-intro{
+                margin-top: 8vh;
+                #about-description{
+                    font-size: 1rem;
+                }
+            }
+            #about-infos{
+                margin-top: 8vh;
+                #about-infos-experiences{
+                    #experiences-details{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 1025px) {
     #about-body{
         #about-background{
@@ -240,7 +268,6 @@ export default {
                 #about-description{
                     width: 90%;
                     margin-left: 5%;
-                    font-size: 1rem;
                 }
             }
             #about-infos{
