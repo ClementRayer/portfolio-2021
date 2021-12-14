@@ -264,14 +264,14 @@ export default {
                 font-size: 2.2rem;
             }
             .about-intro{
-                margin-top: 9vh;
+                margin-top: 12vh;
                 #about-description{
                     width: 90%;
                     margin-left: 5%;
                 }
             }
             #about-infos{
-                margin-top: 8vh;
+                margin-top: 10vh;
                 #about-infos-experiences{
                     #experiences-details{
                         font-size: 1rem;

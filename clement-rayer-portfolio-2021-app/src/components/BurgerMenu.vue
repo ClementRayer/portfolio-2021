@@ -20,15 +20,17 @@
                     <BurgerMenuLink buttonText="Projets" />
                 </router-link>
             </div>
-            <div id="burger-menu-contact">
-                <BurgerMenuSocials
-                    v-for="item in socialsList"
-                    :link="item.link"
-                    :title="item.title"
-                    :source="item.source"
-                    :alt="item.alt"
-                    :key="item.title"
-                />
+            <div id="burger-menu-right">
+                <div id="burger-menu-contact">
+                    <BurgerMenuSocials
+                        v-for="item in socialsList"
+                        :link="item.link"
+                        :title="item.title"
+                        :source="item.source"
+                        :alt="item.alt"
+                        :key="item.title"
+                    />
+                </div>
             </div>
         </div>
     </div>
@@ -170,22 +172,21 @@ export default {
     cursor: pointer;
     #burger-menu-cta{
         width: 40px;
-        height: 24px;
-        position: fixed;
         top: 6vh;
         right: 3.5vw;
         z-index: 100;
+        position: fixed;
         transition: 400ms ease-out;
     }
     #burger-menu-content{
         height: 10vh;
-        width: 90vw;
+        width: 91vw;
         position: fixed;
         top: calc(-10vh - 1px);
         padding: 0 5vw;
         font-family: "Fugaz One", cursive;
         font-size: 3rem;
-        background-color: #000000;
+        background-color: rgba(0, 0, 0, 0.8);
         text-transform: uppercase;
         transition: 400ms ease-out;
         display: flex;
@@ -207,9 +208,14 @@ export default {
                 }
             }
         }
-        #burger-menu-contact{
+        #burger-menu-right{
             display: flex;
-            margin-right: 3.5vw;
+            align-items: center;
+            #burger-menu-contact{
+                display: flex;
+                margin-right: 3.5vw;
+            }
+            
         }
     }
 }
@@ -219,6 +225,90 @@ export default {
     }
     #burger-menu-content{
         transform: translateY(10vh);
+    }
+}
+@media screen and (max-width: 1367px) {
+    .burger-menu{
+        #burger-menu-content{
+            font-size: 2rem;
+            #burger-menu-right{
+                #burger-menu-cta{
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1025px) {
+    .burger-menu{
+        #burger-menu-content{
+            font-size: 1.5rem;
+            #burger-menu-right{
+                #burger-menu-contact{
+                    margin-right: 5vw;
+                }
+            }
+        }
+    }
+    .burger-menu-opened{
+        #burger-menu-cta{
+            transform: translateY(-2.5vh);
+        }
+    }
+}
+@media screen and (max-width: 850px) {
+    .burger-menu{
+        #burger-menu-content{
+            font-size: 1.25rem;
+            #burger-menu-right{
+                #burger-menu-contact{
+                    margin-right: 7vw;
+                }
+            }
+        }
+    }
+    .burger-menu-opened{
+        #burger-menu-cta{
+            transform: translateY(-2vh);
+        }
+    }
+}
+@media screen and (max-width: 415px) {
+    .burger-menu{
+        #burger-menu-cta{
+            top: 3.55vh;
+            right: 6vw;
+        }
+        #burger-menu-content{
+            height: 100vh;
+            width: 100vw;
+            top: calc(-100vh - 1px);
+            padding: 0;
+            font-size: 3rem;
+            flex-direction: column;
+            justify-content: space-evenly;
+            #burger-menu-links{
+                width: 100vw;
+                flex-direction: column;
+                align-items: center;
+                .burger-menu-links-item-container{
+                    width: 100%;
+                }
+            }
+            #burger-menu-right{
+                #burger-menu-contact{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    .burger-menu-opened{
+        #burger-menu-cta{
+            transform: translateY(0);
+        }
+        #burger-menu-content{
+            transform: translateY(100vh);
+        }
     }
 }
 </style>

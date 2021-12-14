@@ -1,7 +1,7 @@
 <template>
     <div id="burger-menu-socials">
         <a :href="link" target="_blank" class="burger-menu-socials-image-container"><img :src="require(`../../public/${source}`)" :alt="alt" class="burger-menu-socials-image"></a>
-        <p><a :href="link" target="_blank" class="burger-menu-socials-text">{{ title }}</a></p>
+        <p class="burger-menu-socials-text"><a :href="link" target="_blank" class="burger-menu-socials-link">{{ title }}</a></p>
     </div>
 </template>
 
@@ -46,9 +46,48 @@ export default {
         }
     }
     .burger-menu-socials-text{
-        margin-left: 7px;
-        color: #ffffff;
-        -webkit-text-stroke: none;
+        .burger-menu-socials-link{
+            margin-left: 7px;
+            color: #ffffff;
+            -webkit-text-stroke: none;
+        }
+    }
+}
+@media screen and (max-width: 1367px) {
+    #burger-menu-socials{
+        font-size: 1.25rem;
+    }
+}
+@media screen and (max-width: 1025px) {
+    #burger-menu-socials{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 850px) {
+    #burger-menu-socials{
+        .burger-menu-socials-text{
+            .burger-menu-socials-link{
+                display: none;
+            }
+        }
+    }
+}
+@media screen and (max-width: 415px) {
+    #burger-menu-socials{
+        height: 4vh;
+        font-size: 1.5rem;
+        margin-bottom: 2vh;
+        .burger-menu-socials-image-container{
+            height: 4vh;
+            .burger-menu-socials-image{
+                height: 4vh;
+            }
+        }
+        .burger-menu-socials-text{
+            .burger-menu-socials-link{
+                display: block;
+            }
+        }
     }
 }
 </style>

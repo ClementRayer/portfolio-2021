@@ -4,7 +4,7 @@
         <span class="animated-line top-line top-line-second"></span>
         <span class="animated-line bottom-line bottom-line-first"></span>
         <span class="animated-line bottom-line bottom-line-second"></span>
-        <span class="burger-menu-links-item"> {{ buttonText }}</span>
+        <span class="burger-menu-links-item">{{ buttonText }}</span>
     </div>
 </template>
 
@@ -22,13 +22,13 @@ export default {
 
 <style lang="scss" scoped>
 .animated-line{
-        width: 100%;
-        height: 1vh;
-        position: absolute;
-        left: 0;
-        background: #ffffff;
-        display: none;
-    }
+    width: 100%;
+    height: 1vh;
+    position: absolute;
+    left: 0;
+    background: #ffffff;
+    display: none;
+}
 .top-line{
     top: 0;
 }
@@ -57,6 +57,30 @@ export default {
     &:hover{
         color: #ffffff;
         -webkit-text-stroke: none;
+    }
+}
+@media screen and (max-width: 415px) {
+    .animated-line{
+        height: 2vh;
+    }
+    .top-line-first{
+        animation: 500ms roll-effect linear infinite;
+    }
+    .top-line-second{
+        animation: 500ms roll-effect 50ms linear infinite;
+    }
+    .bottom-line{
+        top: 13vh;
+    }
+    .bottom-line-first{
+        animation: 500ms roll-effect-reverse linear infinite;
+    }
+    .bottom-line-second{
+        animation: 500ms roll-effect-reverse 50ms linear infinite;
+    }
+    .burger-menu-links-item{
+        height: 15vh;
+        line-height: 15vh;
     }
 }
 @keyframes roll-effect {
