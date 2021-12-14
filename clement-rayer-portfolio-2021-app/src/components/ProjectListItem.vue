@@ -135,7 +135,7 @@ export default {
 .project-item{
     .project-item-content{
         margin: 4.6vh 0;
-        font-size: 6.8rem;
+        font-size: 6rem;
         font-family: "Fugaz One", cursive;
         color: #ffffff;
         display: flex;
