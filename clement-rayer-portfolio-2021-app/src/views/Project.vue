@@ -1,6 +1,6 @@
 <template>
   <div id="projects-body">
-      <ProjectHeaderAlt
+      <ProjectHeader
         :key="projectToDisplay.id"
         :name="projectToDisplay.name"
         :cover="projectToDisplay.cover"
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import ProjectHeaderAlt from '../components/ProjectHeaderAlt.vue'
+import ProjectHeader from '../components/ProjectHeader.vue'
 import ProjectIntroduction from '../components/ProjectIntroduction.vue'
 import ProjectImagePlusText from '../components/ProjectImagePlusText.vue'
 import ProjectTechnicalScope from '../components/ProjectTechnicalScope.vue'
@@ -52,7 +52,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'Project',
   components:{
-    ProjectHeaderAlt,
+    ProjectHeader,
     ProjectIntroduction,
     ProjectImagePlusText,
     ProjectTechnicalScope,

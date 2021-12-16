@@ -27,7 +27,7 @@
 import anime from "animejs";
 
 export default {
-    name: "ProjectHeaderAlt",
+    name: "ProjectHeader",
     props: {
         name:{
             type: String,
@@ -131,7 +131,7 @@ export default {
         align-items: center;
         justify-content: center;
         background-size: cover;
-        background-position: top center;
+        background-position: center;
         #text-container{
             background-size: 100% 200%;
             background-image: linear-gradient(to bottom, transparent 50%, #ffffff 50%);
