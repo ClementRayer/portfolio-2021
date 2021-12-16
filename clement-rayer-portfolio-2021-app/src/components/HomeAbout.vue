@@ -170,14 +170,14 @@ export default {
         text-align: center;
         #about-title, h3{
             margin: 0;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-family: "Fugaz One", cursive;
             font-weight: 400;
         }
         .about-intro{
-            margin-top: 12vh;
+            margin-top: 10vh;
             #about-description{
-                font-size: 1.125rem;
+                font-size: 1rem;
                 a{
                     text-decoration: underline 1px;
                 }
@@ -187,7 +187,7 @@ export default {
             }
         }
         #about-infos{
-            margin-top: 11vh;
+            margin-top: 8vh;
             display: flex;
             justify-content: center;
             #about-infos-socials{

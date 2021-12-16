@@ -146,6 +146,7 @@ export default {
 <style lang="scss">
 #home-body {
 	background-image: url('../../public/portfolio-bg.png');
+	background-size: cover;
 	height: 100vh;
 	width: 100vw;
 	.bg-circles-container {
@@ -171,7 +172,7 @@ export default {
 				margin-block-start: 0.67em;
 				margin-block-end: 0.67em;
 				text-align: center;
-				font-size: 7rem;
+				font-size: 6rem;
 				font-family: "Fugaz One", cursive;
 				color: transparent;
 				-webkit-text-stroke: 3px #00ffa3;
@@ -180,7 +181,7 @@ export default {
 			#name {
 				text-align: center;
 				position: relative;
-				font-size: 7rem;
+				font-size: 6rem;
 				color: #00ffa3;
 				font-family: "Fugaz One", cursive;
 				mix-blend-mode: saturation;
@@ -188,7 +189,7 @@ export default {
 			#name::before {
 				content: "CLÉMENT RAYER";
 				color: #ffffff;
-				font-size: 6.9rem;
+				font-size: 5.9rem;
 				margin: 0.2rem 0 0 0.4rem;
 				text-align: center;
 				mix-blend-mode: normal;

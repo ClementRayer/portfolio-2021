@@ -172,7 +172,7 @@ export default {
     cursor: pointer;
     #burger-menu-cta{
         width: 40px;
-        top: 6vh;
+        top: 8vh;
         right: 3.5vw;
         z-index: 100;
         position: fixed;
@@ -221,7 +221,7 @@ export default {
 }
 .burger-menu-opened{
     #burger-menu-cta{
-        transform: translateY(-2vh);
+        transform: translateY(-4.7vh);
     }
     #burger-menu-content{
         transform: translateY(10vh);
