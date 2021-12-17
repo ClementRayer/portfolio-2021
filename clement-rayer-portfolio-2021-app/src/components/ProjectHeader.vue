@@ -141,7 +141,7 @@ export default {
                 font-size: 10vh;
                 line-height: .8;
                 color: transparent;
-                -webkit-text-stroke: 3px #ffffff;
+                -webkit-text-stroke: 1px #ffffff;
                 opacity: 0;
             }
             .animated-text-full{
@@ -151,7 +151,7 @@ export default {
         #page-title{
             font-size: 7rem;
             font-weight: 700;
-            -webkit-text-stroke: 3px #ffffff;
+            -webkit-text-stroke: 1px #ffffff;
             display: none;
             opacity: 0;
         }

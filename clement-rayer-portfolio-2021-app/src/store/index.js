@@ -23,7 +23,7 @@ export default createStore({
         basicImagePlusText: {
           source: "/projets/ranking-nba/nba-cover-full.png",
           alt: "Aperçu du projet Ranking NBA",
-          text: "Chaque année sur les réseaux sociaux, de nombreux fans de basket pronostiquent le classement des deux conférences de la NBA, pour définir qui ira en play-offs. Ces listes sont généralement tapées à la va-vite dans des commentaires, ou des captures d'écran de bloc-notes. Chacun les écrit à sa façon, ce qui rend compliqué leur lecture. Sur ce mini site c'est très simple, il suffit de sélectionner dans l'ordre les équipes de l'ouest et de l'est, de noter le nombre de victoires de chacune si le coeur vous en dit, et vous pouvez l'exporter dans une image très simple à partager."
+          text: "Chaque année sur les réseaux sociaux, de nombreux fans de basket pronostiquent le classement des deux conférences de la NBA, pour définir qui ira en play-offs. Ces listes sont généralement tapées à la va-vite dans des commentaires, ou des captures d'écran de bloc-notes. Chacun les écrit à sa façon, ce qui rend compliqué leur lecture. Sur ce site c'est très simple, il suffit de sélectionner dans l'ordre les équipes de l'ouest et de l'est, de noter le nombre de victoires de chacune si le coeur vous en dit, et vous pouvez l'exporter dans une image simple à partager."
         },
         technicalScope: ["HTML", "CSS", "JS Vanilla", "Canvas"],
         threePanelsDetails:{
@@ -31,13 +31,13 @@ export default createStore({
             title: "sélection des équipes",
             source: "/projets/ranking-nba/detail-1-choix-equipe.jpg",
             alt: "Sélection des équipes NBA",
-            description: "Les deux conférences comptent 15 équipes chacunes. Un clic sur une place ouvre la liste des équipes de la conférence, en choisir une la positionne à cette place."
+            description: "Les deux conférences comptent 15 équipes chacune. Un clic sur une place ouvre la liste des équipes de la conférence, en choisir une la positionne à cette place."
           },
           2: {
             title: "sélection du score",
             source: "/projets/ranking-nba/detail-2-choix-score.jpg",
             alt: "Sélection du score des équipes NBA",
-            description: "Il est possible d'activer et désactiver le nombre de victoire, ce qui adapte l'image et les choix que l'utilisateur peut faire. S'il est activé, l'utilisateur entre le nombre de victoires qu'il pronostique, et le bilan victoire/défaite sera calculé et ajouté à l'export."
+            description: "Il est possible d'activer et désactiver le nombre de victoires, ce qui adapte l'image et ajoute ou enlève les champs correspondants. S'il est activé, l'utilisateur entre le nombre de victoires qu'il pronostique, et le bilan victoires/défaites sera calculé et ajouté à l'export."
           },
           3: {
             title: "export",
@@ -67,7 +67,7 @@ export default createStore({
         basicImagePlusText: {
           source: "/projets/youtuberie/youtuberie-apercu.png",
           alt: "Aperçu du projet La Youtuberie",
-          text: "Ce mini-site génère un nom composé de deux parties: généralement un nom d'animal ou de végétal, assorti d'un qualificatif. Rien de plus simple à utiliser: un bouton permet de générer un nom si l'actuel ne convient pas à l'utilisateur, lorsque celui-ci est satisfait un autre bouton permet de copier le nom généré dans le presse papier, prêt à l'usage! La base de donnée contient 150 éléments qui permettent de générer plus de 5000 pseudonymes, plus exquis les uns que les autres."
+          text: "Ce site génère un nom composé de deux parties: généralement un nom d'animal ou de végétal, assorti d'un qualificatif. Rien de plus simple à utiliser: un bouton permet de générer un nom si l'actuel ne convient pas à l'utilisateur. Lorsque celui-ci est satisfait un autre bouton lui permet de copier le nom généré dans le presse papier, prêt à l'usage! La base de données contient 150 éléments qui permettent de générer plus de 5000 pseudonymes, plus exquis les uns que les autres."
         },
         technicalScope: ["HTML", "CSS", "JS vanilla"],
         url: 'https://clementrayer.fr/youtuberie/'
@@ -87,11 +87,11 @@ export default createStore({
           source: "/projets/beway/beway-cover.jpg",
           alt: "Visuel du projet Beway"
         },
-        introductionText: "Beway est un studio de création digital réalisant des sites web, animations & illustrations. Dans le cadre de la refonte de leur site, ils ont fait appel a moi pour modifier des pages de leur site et créer un site dédié à leurs activités dans le domaine musical.",
+        introductionText: "Beway est un studio de création digital réalisant des sites web, animations & illustrations. Dans le cadre de la refonte de leur site, ils ont fait appel à moi pour modifier des pages de leur site et créer un site dédié à leurs activités dans le domaine musical.",
         basicImagePlusText: {
           source: "/projets/beway/beway-apercu.jpg",
           alt: "Aperçu du projet Beway",
-          text: "J'ai eu l'opportunité de travailler en freelance avec l'agence Beway pour participer à la refonte de leur site corporate. Durant cette mission, j'ai développé la nouvelle version de leur page d'accueil, leur page \"à propos\" ainsi que les pages projets. Par la suite, ils m'ont confié quelques tâches de webmastering (passage de site en https, gestion de certificat SSL et de la maintenance), puis le développement de leur site Beway Music, dédié à leurs activités musicales."
+          text: "J'ai eu l'opportunité de travailler en freelance avec le studio Beway pour participer à la refonte de leur site corporate. Durant cette mission, j'ai développé la nouvelle version de leur page d'accueil, leur page \"à propos\" ainsi que les pages projets. Par la suite, ils m'ont confié quelques tâches de webmastering (passage de site en https, gestion de certificat SSL et de la maintenance), puis le développement de leur site Beway Music, dédié à leurs activités musicales."
         },
         technicalScope: ["HTML", "SCSS", "JS", "Wordpress"],
         threePanelsDetails:{
@@ -105,7 +105,7 @@ export default createStore({
             title: "pages projets",
             source: "/projets/beway/beway-details-2.jpg",
             alt: "Refonte de la page projets",
-            description: "Les pages projets ont été refondues pour intégrer plus d'images et mettre plus en avant le travail du studio. La partie responsive à également été modifiée pour être plus graphique."
+            description: "Les pages projets ont été refondues pour intégrer plus d'images et mettre plus en avant le travail du studio. La partie responsive à également été modifiée."
           },
           3: {
             title: "création du site Music",
@@ -114,7 +114,7 @@ export default createStore({
             description: "Afin de mettre en avant le travail de Beway dans le monde musical, j'ai créé un site basé sur celui du studio, adapté pour les thématiques et projets à couvrir."
           },
         },
-        url: 'https://beway.studio/'
+        url: 'https://web.archive.org/web/20210305092452/https://beway.studio/'
       },
       {
         id: 3,
@@ -135,7 +135,7 @@ export default createStore({
         basicImagePlusText: {
           source: "/projets/stellaria/stellaria-thumbnail.png",
           alt: "Aperçu du projet Stellaria",
-          text: "Le seul brief sur ce projet était de réaliser un projet pouvant concourrir aux Awwwards, il se doit donc d'être innovant techniquement, tout en étant une proposition artistique forte. Ce projet étudiant à la particularité d'être effectué dans un format professionnel: notre équipe était une agence, confrontée à un client, ses exigences et les contraintes qu'elles induisent. Initialement prévu à un rôle de chef de projet et directeur technique, j'ai dû par la force des choses développer tout le site moi-même, en continuant à gérer le projet et la relation client."
+          text: "Le seul brief sur ce projet était de réaliser un projet pouvant concourir aux Awwwards, il se doit donc d'être innovant techniquement, tout en étant une proposition artistique forte. Ce projet étudiant avait la particularité d'être effectué dans un format professionnel: notre équipe était une agence, confrontée à un client, ses exigences et les contraintes qu'elles induisent. Initialement prévu à un rôle de chef de projet et directeur technique, j'ai dû par la force des choses développer tout le site moi-même, en continuant à gérer le projet et la relation client."
         },
         technicalScope: ["HTML", "PHP", "SCSS", "JS", "VR (three.js/A-frame"],
         threePanelsDetails:{
@@ -149,7 +149,7 @@ export default createStore({
             title: "pédagogie",
             source: "/projets/stellaria/stellaria-details-2.jpg",
             alt: "Panneau d'informations sur le soleil",
-            description: "Au survol de chaque astre, un panneau d'informations s'ouvre. Ceux-ci contiennent des informations formelles sur l'objet (taille, nature, vitesse de déplacement...) ainsi que quelques fun facts le concernant."
+            description: "Au survol de chaque astre, un panneau d'informations s'ouvre. Ces panneaux contiennent des informations formelles sur l'objet (taille, nature, vitesse de déplacement...) ainsi que quelques fun facts le concernant."
           },
           3: {
             title: "contenu adaptable",
