@@ -50,7 +50,7 @@ export default {
     font-size: 9rem;
     font-family: "Fugaz One", cursive;
     color: transparent;
-		-webkit-text-stroke: 1px #ffffff;
+		-webkit-text-stroke: 3px #ffffff;
   }
   .projects{
     width: 84vw;

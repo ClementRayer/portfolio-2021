@@ -207,7 +207,7 @@ export default {
 			font-size: 2.5rem;
 			text-transform: uppercase;
 			color: transparent;
-			-webkit-text-stroke: 0.1px #ffffff;
+			-webkit-text-stroke: 1px #ffffff;
 			mix-blend-mode: normal;
 		}
 		#h2-outline{

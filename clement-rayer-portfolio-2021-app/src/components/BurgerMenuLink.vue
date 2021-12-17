@@ -53,7 +53,7 @@ export default {
     height: 10vh;
     line-height: 10vh;
     color: transparent;
-    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-stroke: 2px #ffffff;
     &:hover{
         color: #ffffff;
         -webkit-text-stroke: none;

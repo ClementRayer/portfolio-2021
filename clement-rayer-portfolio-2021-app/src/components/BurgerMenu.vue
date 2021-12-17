@@ -42,6 +42,7 @@ import BurgerMenuSocials from '../components/BurgerMenuSocials.vue'
 import { mapState } from 'vuex'
 import anime from "animejs";
 
+var viewportWidth = window.innerWidth;
 export default {
 	name: "BurgerMenu",
     components:{
@@ -63,8 +64,14 @@ export default {
         toggleMenu(){
             if(this.$store.state.burgerMenuOpen){
                 this.closeBurgerAnimation()
+                if(viewportWidth < 450){
+                    this.mobileSuspendScroll('visible')
+                }
             }else{
                 this.openBurgerAnimation()
+                if(viewportWidth < 450){
+                    this.mobileSuspendScroll('hidden')
+                }
             }
             this.$store.commit('TOGGLE_MENU');
         },
@@ -72,6 +79,9 @@ export default {
             this.$store.commit('FORCE_MENU_CLOSE');
             this.closeBurgerAnimation();
             this.onAnchor = false;
+            if(viewportWidth < 450){
+                this.mobileSuspendScroll('visible')
+            }
         },
         scrollToAbout() {
 			var height = window.innerHeight;
@@ -85,6 +95,9 @@ export default {
             }
             this.toggleMenu()
 		},
+        mobileSuspendScroll(property){
+            document.body.setAttribute('style', `overflow: ${property}`)
+        },
         openBurgerAnimation(){
             anime({
                 targets: '#burger-top-bar',

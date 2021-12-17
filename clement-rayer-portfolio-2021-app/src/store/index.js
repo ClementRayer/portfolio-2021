@@ -23,7 +23,7 @@ export default createStore({
         basicImagePlusText: {
           source: "/projets/ranking-nba/nba-cover-full.png",
           alt: "Aperçu du projet Ranking NBA",
-          text: "Chaque année sur les réseaux sociaux, de nombreux fans de basket pronostiquent le classement des deux conférences de la NBA, pour définir qui ira en play-offs. Ces listes sont généralement tapées à la va-vite dans des commentaires, ou des captures d'écran de bloc-notes. Chacun les écrit à sa façon, ce qui rend compliqué leur lecture. Sur ce mini site c'est très simple, il suffit de sélectionner dans l'ordre les équipes de l'ouest et de l'est, de noter le nombre de victoir de chacune si le coeur vous en dit, et vous pouvez l'exporter dans une image très simple à partager."
+          text: "Chaque année sur les réseaux sociaux, de nombreux fans de basket pronostiquent le classement des deux conférences de la NBA, pour définir qui ira en play-offs. Ces listes sont généralement tapées à la va-vite dans des commentaires, ou des captures d'écran de bloc-notes. Chacun les écrit à sa façon, ce qui rend compliqué leur lecture. Sur ce mini site c'est très simple, il suffit de sélectionner dans l'ordre les équipes de l'ouest et de l'est, de noter le nombre de victoires de chacune si le coeur vous en dit, et vous pouvez l'exporter dans une image très simple à partager."
         },
         technicalScope: ["HTML", "CSS", "JS Vanilla", "Canvas"],
         threePanelsDetails:{
@@ -67,7 +67,7 @@ export default createStore({
         basicImagePlusText: {
           source: "/projets/youtuberie/youtuberie-apercu.png",
           alt: "Aperçu du projet La Youtuberie",
-          text: "Ce mini-site génère un nom composé de deux parties: généralement un nom d'animal ou de végétal, assorti d'un qualificatif. Rien de plus simple à utiliser: un bouton permet de générer un nom si l'actuel ne convient pas à l'utilisateur, lorsque celui-ci est satisfait un autre bouton permet de copier le nom généré dans le presse papier, prêt à l'usage! La base de donnée contient 150 éléments qui permettent de générer plus 5000 pseudonymes plus exquis les uns que les autres."
+          text: "Ce mini-site génère un nom composé de deux parties: généralement un nom d'animal ou de végétal, assorti d'un qualificatif. Rien de plus simple à utiliser: un bouton permet de générer un nom si l'actuel ne convient pas à l'utilisateur, lorsque celui-ci est satisfait un autre bouton permet de copier le nom généré dans le presse papier, prêt à l'usage! La base de donnée contient 150 éléments qui permettent de générer plus de 5000 pseudonymes, plus exquis les uns que les autres."
         },
         technicalScope: ["HTML", "CSS", "JS vanilla"],
         url: 'https://clementrayer.fr/youtuberie/'

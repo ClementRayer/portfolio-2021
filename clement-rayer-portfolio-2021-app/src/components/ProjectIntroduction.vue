@@ -88,6 +88,7 @@ export default {
         h1{
             margin: 8vh auto 4vh auto;
             font-size: 3rem;
+            word-break: break-word;
         }
         #project-type-date{
             font-size: 1.5rem;

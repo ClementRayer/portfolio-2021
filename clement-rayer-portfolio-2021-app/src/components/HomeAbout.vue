@@ -168,6 +168,9 @@ export default {
         color: #ffffff;
         font-family: 'Sen', sans-serif;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         #about-title, h3{
             margin: 0;
             font-size: 2.5rem;
@@ -175,7 +178,6 @@ export default {
             font-weight: 400;
         }
         .about-intro{
-            margin-top: 10vh;
             #about-description{
                 font-size: 1rem;
                 a{
