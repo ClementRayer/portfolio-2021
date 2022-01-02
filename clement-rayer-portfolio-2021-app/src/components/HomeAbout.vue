@@ -7,7 +7,7 @@
                     <p id="about-description">
                         Moi c’est Clément, développeur web, designer et chef de projet 👋<br>
                         Je touche un peu à tout, mais mon objectif c’est de me concentrer sur le développement web, en freelance et en entreprise<br>
-                        En complément des informations ci-dessous, vous pouvez retrouver mes différents projets <router-link to="/projects" class="link-hover">ici</router-link><br>
+                        En complément des informations ci-dessous, vous pouvez retrouver <a href="https://clementrayer.fr/Rayer-Clement-CV.pdf" target="blank">mon CV ici</a>, et mes différents projets <router-link to="/projects" class="link-hover">par là</router-link><br>
                         N’hésitez pas à me contacter pour toute demande 😉<br>
                     </p>
                 </div>
