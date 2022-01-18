@@ -161,7 +161,7 @@ export default {
 					width: 100%;
 					text-align: center;
 					font-family: "Fugaz One", cursive;
-					font-size: 8rem;
+					font-size: 7rem;
 					font-weight: 700;
 					letter-spacing: 1vw;
 					color: transparent;
@@ -192,7 +192,7 @@ export default {
 				text-align: center;
 				font-family: "Fugaz One", cursive;
 				letter-spacing: 1vw;
-				font-size: 8rem;
+				font-size: 7rem;
 				color: #a7b9c0;
 			}
 		}
@@ -207,11 +207,36 @@ export default {
 			color: #a7b9c0;
 		}
 		#arrow-anchor-link{
-			margin-top: 25vh;
+			margin-top: 20vh;
 			cursor: pointer;
 			#down-arrow {
 				width: 3.2vw;
 				margin: 4vh 0 0 0;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1440px) {
+	#home-body {
+		#title {
+			#name-container{
+				#name-outlines-container{
+					.name-outline {
+						font-size: 6rem;
+					}
+				}
+				#name {
+					font-size: 6rem;
+				}
+			}
+		}
+		#subtext {
+			margin-top: 20vh;
+			h2{
+				font-size: 2rem;
+			}
+			#arrow-anchor-link{
+				margin-top: 12vh;
 			}
 		}
 	}
