@@ -94,63 +94,7 @@ export default {
         ...mapState({
             socialsList : 'socialsList'
         })
-    },
-    // methods: {
-    //     prout : function (ya){
-    //         targetid = ya.target.id
-    //         console.log('prout');
-    //     }
-    // }
-    // mounted() {
-    //     var hoverTargets = document.querySelectorAll('.link-hover');
-    //     for (const hoverTarget of hoverTargets){
-    //         hoverTarget.addEventListener('mouseover', console.log('yo'));
-
-    //     }
-    // }
-    ////////////////////////////////////////////////////
-    // mounted() {
-    //     var hoverTargets = document.querySelectorAll('.link-hover');
-
-    //     for (const hoverTarget of hoverTargets) {
-    //         hoverTarget.setAttribute('style', 'color: #ffffff');
-    //         var colorAnimation = anime
-    //             .timeline({
-    //                 easing: "linear",
-    //                 duration : 1000,
-    //                 direction: "alternate",
-    //                 loop: true,
-    //                 autoplay: false
-    //             })
-    //             .add({
-    //                 targets: hoverTarget,
-    //                 left: 240
-    //             })
-    //         hoverTarget.addEventListener('mouseover', console.log('teps'));
-    //         hoverTarget.addEventListener('mouseout', colorAnimation.pause())
-    //     }
-    // }
-    ///////////////////////////////////////////////////
-    // mounted() {
-    //     var hoverTargets = document.querySelectorAll('.link-hover');
-    //     // hoverTargets.addEventListener('mouseover', function(){console.log('teprou')})
-
-    //     function hoverAnimation (){
-    //         anime
-    //             .timeline({
-    //                 easing: "linear",
-    //                 direction: "alternate",
-    //                 loop: true
-    //             })
-    //             .add({
-    //                 targets: hoverTargets,
-    //                 style: ['background: radial-gradient(100% 100% at 50% 50%,#2562ff 0%,#ff4141 100%)', 'background: radial-gradient(0% 0% at 50% 50%,#2562ff 0%,#ff4141 100%)']
-    //             })
-    //             console.log('porit')
-    //     }
-
-    //     document.querySelectorAll('.link-hover').addEventListener("mouseover", hoverAnimation);
-    // }
+    }
 };
 </script>
 

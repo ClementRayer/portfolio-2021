@@ -8,7 +8,6 @@
 					<p class="name-outline" id="outline-3">CLÉMENT RAYER</p>
 				</div>
                 <h1 id="name">CLÉMENT RAYER</h1>
-				<!-- apparation en ScaleX, + du skew ?-->
             </div>
         </div>
         <div id="subtext">
