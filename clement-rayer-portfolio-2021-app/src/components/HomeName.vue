@@ -219,16 +219,24 @@ export default {
 @media screen and (max-width: 1025px) {
 	#home-body {
 		#title {
-			#name{
-				font-size: 6rem;
-			}
-			#name::before{
-				font-size: 5.9rem;
+			#name-container{
+				#name-outlines-container{
+					.name-outline {
+						font-size: 6rem;
+					}
+				}
+				#name {
+					font-size: 6rem;
+				}
 			}
 		}
 		#subtext {
-			h2, #h2-outline{
+			margin-top: 20vh;
+			h2{
 				font-size: 2rem;
+			}
+			#arrow-anchor-link{
+				margin-top: 12vh;
 			}
 		}
 	}
@@ -236,70 +244,68 @@ export default {
 @media screen and (max-width: 415px) {
 	#home-body {
 		#title {
-			#name{
-				font-size: 3.5rem;
-			}
-			#name::before{
-				font-size: 3.4rem;
-				margin: 0.2rem 0 0 -3.5rem;
+			#name-container{
+				#name-outlines-container{
+					.name-outline {
+						font-size: 4rem;
+					}
+				}
+				#name {
+					font-size: 4rem;
+				}
 			}
 		}
 		#subtext {
-			margin-top: 4vh;
-			h2, #h2-outline{
-				width: 80%;
-				margin-left: 10%;
+			width: 80vw;
+			margin: 20vh 10vw 0 10vw;
+			h2{
 				font-size: 1.5rem;
-			}
-			#h2-outline{
-				color: #313535;
-			}
-			#arrow-anchor-link{
-				#down-arrow{
-					width: 15vw;
-					margin: 0;
-				}
 			}
 		}
 	}
 }
-@media screen and (max-width: 376px) and (min-height: 720px){
+@media screen and (max-width: 376px) and (min-height: 650px){
 	#home-body {
 		#title {
-			.bg-circle{
-				width: 85vw;
-				height: 85vw;
-			}
-			#circle-two, #circle-three {
-				margin: -55vw 0 0 0;
-			}
-		}
-		#subtext{
-			#arrow-anchor-link{
-				#down-arrow{
-					margin-top: 2vh;
+			#name-container{
+				#name-outlines-container{
+					.name-outline {
+						font-size: 3rem;
+					}
+				}
+				#name {
+					font-size: 3rem;
 				}
 			}
 		}
-	}	
+		#subtext {
+			width: 80vw;
+			margin: 20vh 10vw 0 10vw;
+			h2{
+				font-size: 1.5rem;
+			}
+		}
+	}
 }
 @media screen and (max-width: 340px) {
 	#home-body {
 		#title {
-			#name::before{
-				margin-left: -1.5rem;
-			}
-		}
-		#subtext{
-			h2, #h2-outline{
-				font-size: 1.25rem;
-			}
-			#arrow-anchor-link{
-				#down-arrow{
-					margin-top: 0;
+			#name-container{
+				#name-outlines-container{
+					.name-outline {
+						font-size: 3rem;
+					}
+				}
+				#name {
+					font-size: 3rem;
 				}
 			}
 		}
-	}	
+		#subtext {
+			h2{
+				font-size: 1.2rem;
+			}
+		}
+	}
 }
 </style>
