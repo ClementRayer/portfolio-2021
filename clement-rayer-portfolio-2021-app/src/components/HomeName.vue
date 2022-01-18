@@ -1,16 +1,17 @@
 <template>
     <div id="home-body">
-        <div class="bg-circles-container">
-            <div class="bg-circle" id="circle-one" style=""></div>
-            <div class="bg-circle" id="circle-two"></div>
-            <div class="bg-circle" id="circle-three"></div>
+        <div id="title">
             <div id="name-container">
-                <p id="name-outline">CLÉMENT RAYER</p>
+				<div id="name-outlines-container">
+					<p class="name-outline" id="outline-1">CLÉMENT RAYER</p>
+					<p class="name-outline" id="outline-2">CLÉMENT RAYER</p>
+					<p class="name-outline" id="outline-3">CLÉMENT RAYER</p>
+				</div>
                 <h1 id="name">CLÉMENT RAYER</h1>
+				<!-- apparation en ScaleX, + du skew ?-->
             </div>
         </div>
         <div id="subtext">
-			<p id="h2-outline">Développeur web - designer - chef de projet</p>
             <h2>Développeur web - designer - chef de projet</h2>
             <div @click="scrollToNextScreen" id="arrow-anchor-link">
 				<svg width="66" height="34" viewBox="0 0 66 34" fill="none" stroke="#ffffff" xmlns="http://www.w3.org/2000/svg">
@@ -33,102 +34,98 @@ export default {
 				top: height,
 				behavior: 'smooth'
 			});
-		}
+		},
+		
 	},
 	mounted() {
-		///////////////////////////////////////
-		// HOME CIRCLES ANIMATION
-		// Setting a basic background on load
-		var circleOne = document.getElementById("circle-one");
-		var circleTwo = document.getElementById("circle-two");
-		var circleThree = document.getElementById("circle-three");
-
-		function setInitialBackgroundCircles() {
-			circleOne.setAttribute(
-				"style",
-				"background: radial-gradient(rgba(243,0,24,0.3) 0%, rgba(243,0,24,0.8) 100%)"
-			);
-			circleTwo.setAttribute(
-				"style",
-				"background: radial-gradient(rgba(18,0,43,0.3) 0%, rgba(18,0,43,0.8) 100%)"
-			);
-			circleThree.setAttribute(
-				"style",
-				"background: radial-gradient(rgba(0,177,102,0.3) 0%, rgba(0,177,102,0.8) 100%)"
-			);
-		}
-
-		window.onload = setInitialBackgroundCircles();
-
-		// Animation core
 		anime
 			.timeline({
-				easing: "linear",
-				direction: "alternate",
-				loop: true,
+				delay: 200,
+				targets: '#name-container',
+				easing: 'easeInOutSine'
 			})
-			.add(
-				{
-					targets: "#circle-one",
-					duration: function () {
-						var durationOne = anime.random(800, 3000);
-						return durationOne;
-					},
-					keyframes: [
-						{
-							background:
-								"radial-gradient(rgba(243,0,24,0.3) 0%, rgba(243,0,24,0.4) 100%)",
-						},
-						{
-							background:
-								"radial-gradient(rgba(243,0,24,0.8) 0%, rgba(243,0,24,0.9) 100%)",
-						},
-					],
-				},
-				0
-			)
-			.add(
-				{
-					targets: "#circle-two",
-					duration: function () {
-						var durationTwo = anime.random(800, 3000);
-						return durationTwo;
-					},
-					keyframes: [
-						{
-							background:
-								"radial-gradient(rgba(18,0,43,0.3) 0%, rgba(18,0,43,0.4) 100%)",
-						},
-						{
-							background:
-								"radial-gradient(rgba(18,0,43,0.8) 0%, rgba(18,0,43,0.9) 100%)",
-						},
-					],
-					delay: 333,
-				},
-				0
-			)
-			.add(
-				{
-					targets: "#circle-three",
-					duration: function () {
-						var durationThree = anime.random(800, 3000);
-						return durationThree;
-					},
-					keyframes: [
-						{
-							background:
-								"radial-gradient(rgba(0,177,102,0.3) 0%, rgba(0,177,102,0.4) 100%)",
-						},
-						{
-							background:
-								"radial-gradient(rgba(0,177,102,0.8) 0%, rgba(0,177,102,0.9) 100%)",
-						},
-					],
-					delay: 666,
-				},
-				0
-			);
+			.add({
+				duration: 1,
+				skewX: -20
+			})
+			.add({
+				duration: 100,
+				scaleY: [0, 1],
+			}, 1)
+			.add({
+				duration: 100,
+				keyframes: [
+					{skewX: -20},
+					{skewX: 15},
+					{skewX: -5},
+					{skewX: 0},
+				],
+			})
+		anime({
+			targets: '#name-outlines-container',
+			translateX: 3,
+			duration: 400,
+			loop: true,
+			direction: 'alternate',
+			easing: 'easeInOutSine'
+		})
+		function outlineSlide(){
+			anime
+				.timeline({
+					duration: 250,
+					loop: false,
+					direction: 'alternate',
+					easing: 'easeInOutSine',
+					loopComplete: function() {
+						outlineSlide()
+					}
+				})
+				.add({
+					targets: '#outline-2',
+					translateX: anime.random(-2, 2)
+				})
+				.add({
+					targets: '#outline-3',
+					translateX: anime.random(-2, 2)
+				}, 0)
+				.add({
+					targets: '#outline-2',
+					duration: 150,
+					translateY: anime.random(-2, 2)
+				}, 0)
+				.add({
+					targets: '#outline-3',
+					duration: 150,
+					translateY: anime.random(-2, 2)
+				}, 0)
+		}
+		window.onload = outlineSlide()
+		anime
+			.timeline({
+				duration: 200,
+				delay: 1000,
+				loop: true,
+				direction: 'alternate',
+				easing: 'easeInOutSine',
+			})
+			.add({
+				targets: '#outline-2',
+				skewX: anime.random(-50, 50),
+			})
+			.add({
+				targets: '#outline-3',
+				skewX: anime.random(-50, 50),
+			})
+			.add({
+				targets: '#outline-2',
+				translateX: anime.random(-18, -8),
+				translateY: anime.random(-14, -10)
+			},0)
+			.add({
+				targets: '#outline-3',
+				translateX: anime.random(8, 18),
+				translateY: anime.random(10, 20)
+			},0)
 		anime({
 			targets: '#down-arrow',
 			points: [
@@ -145,80 +142,73 @@ export default {
 
 <style lang="scss">
 #home-body {
-	background-image: url('../../public/portfolio-bg.png');
-	background-size: cover;
 	height: 100vh;
 	width: 100vw;
-	.bg-circles-container {
-		height: 60vh;
-		padding-top: 10vh;
+	#title {
+		height: 10vh;
+		padding-top: 40vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		.bg-circle {
-			width: 60vh;
-			border-radius: 100%;
-			flex-shrink: 0;
-			height: 100%;
-			background-color: rgba(0, 255, 0, 0.3);
-		}
-		#circle-two, #circle-three {
-			margin-left: -35vh;
-		}
-		#name-container {
-			position: absolute;
-			#name-outline {
+		#name-container{
+			transform: scaleX(0);
+			#name-outlines-container{
 				position: absolute;
-				margin-block-start: 0.67em;
-				margin-block-end: 0.67em;
-				text-align: center;
-				font-size: 6rem;
-				font-family: "Fugaz One", cursive;
-				color: transparent;
-				-webkit-text-stroke: 3px #00ffa3;
-				mix-blend-mode: exclusion;
+				width: 100%;
+				left: 0;
+				z-index: 1;
+				.name-outline {
+					position: absolute;
+					width: 100%;
+					text-align: center;
+					font-family: "Fugaz One", cursive;
+					font-size: 8rem;
+					font-weight: 700;
+					letter-spacing: 1vw;
+					color: transparent;
+					margin-block-start: 0.67em;
+					margin-block-end: 0.67em;
+				}
+				#outline-1{
+					left: 0;
+					z-index: 3;
+					-webkit-text-stroke: 1px #e9dfdf;
+				}
+				#outline-2{
+					left: -0.15vw;
+					margin-block-start: 0.65em;
+					z-index: 2;
+					-webkit-text-stroke: 1px #f30018;
+				}
+				#outline-3{
+					left: 0.15vw;
+					margin-block-start: 0.69em;
+					z-index: 1;
+					-webkit-text-stroke: 1px #00565e;
+				}
 			}
 			#name {
-				text-align: center;
 				position: relative;
-				font-size: 6rem;
-				color: #00ffa3;
-				font-family: "Fugaz One", cursive;
-				mix-blend-mode: saturation;
-			}
-			#name::before {
-				content: "CLÉMENT RAYER";
-				color: #ffffff;
-				font-size: 5.9rem;
-				margin: 0.2rem 0 0 0.4rem;
+				width: 80vw;
 				text-align: center;
-				mix-blend-mode: normal;
-				position: absolute;
-				z-index: 10;
+				font-family: "Fugaz One", cursive;
+				letter-spacing: 1vw;
+				font-size: 8rem;
+				color: #a7b9c0;
 			}
 		}
 	}
 	#subtext {
-		margin-top: 9vh;
+		margin-top: 10vh;
 		text-align: center;
-		h2, #h2-outline {
-			margin-top: 0;
+		h2 {
 			font-family: "Fugaz One", cursive;
 			font-size: 2.5rem;
-			text-transform: uppercase;
-			color: transparent;
-			-webkit-text-stroke: 1px #ffffff;
-			mix-blend-mode: normal;
-		}
-		#h2-outline{
-			position: absolute;
-			width: 100vw;
-			text-align: center;
-			mix-blend-mode: multiply;
-			color: #00ffa3;
-			z-index: 10;
+			font-weight: 400;
+			color: #a7b9c0;
 		}
 		#arrow-anchor-link{
+			margin-top: 25vh;
 			cursor: pointer;
 			#down-arrow {
 				width: 3.2vw;
@@ -229,17 +219,12 @@ export default {
 }
 @media screen and (max-width: 1025px) {
 	#home-body {
-		.bg-circles-container {
-			#name-container {
-				#name-outline{
-					font-size: 6rem;
-				}
-				#name{
-					font-size: 6rem;
-				}
-				#name::before{
-					font-size: 5.9rem;
-				}
+		#title {
+			#name{
+				font-size: 6rem;
+			}
+			#name::before{
+				font-size: 5.9rem;
 			}
 		}
 		#subtext {
@@ -251,28 +236,13 @@ export default {
 }
 @media screen and (max-width: 415px) {
 	#home-body {
-		.bg-circles-container {
-			height: fit-content;
-			padding-top: 5vh;
-			flex-direction: column;
-			.bg-circle{
-				width: 80vw;
-				height: 80vw;
+		#title {
+			#name{
+				font-size: 3.5rem;
 			}
-			#circle-two, #circle-three {
-				margin: -60vw 0 0 0;
-			}
-			#name-container {
-				#name-outline{
-					font-size: 3.5rem;
-				}
-				#name{
-					font-size: 3.5rem;
-				}
-				#name::before{
-					font-size: 3.4rem;
-					margin: 0.2rem 0 0 -3.5rem;
-				}
+			#name::before{
+				font-size: 3.4rem;
+				margin: 0.2rem 0 0 -3.5rem;
 			}
 		}
 		#subtext {
@@ -284,7 +254,6 @@ export default {
 			}
 			#h2-outline{
 				color: #313535;
-				mix-blend-mode: normal;
 			}
 			#arrow-anchor-link{
 				#down-arrow{
@@ -297,7 +266,7 @@ export default {
 }
 @media screen and (max-width: 376px) and (min-height: 720px){
 	#home-body {
-		.bg-circles-container {
+		#title {
 			.bg-circle{
 				width: 85vw;
 				height: 85vw;
@@ -317,18 +286,9 @@ export default {
 }
 @media screen and (max-width: 340px) {
 	#home-body {
-		.bg-circles-container {
-			.bg-circle{
-				width: 75vw;
-				height: 75vw;
-			}
-			#circle-two, #circle-three {
-				margin: -55vw 0 0 0;
-			}
-			#name-container{
-				#name::before{
-					margin-left: -1.5rem;
-				}
+		#title {
+			#name::before{
+				margin-left: -1.5rem;
 			}
 		}
 		#subtext{

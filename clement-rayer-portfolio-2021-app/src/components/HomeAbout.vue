@@ -173,7 +173,7 @@ export default {
         justify-content: center;
         #about-title, h3{
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-family: "Fugaz One", cursive;
             font-weight: 400;
         }
@@ -239,7 +239,7 @@ export default {
             width: calc(100vw - 80px);
             height: calc(100vh - 80px);
             #about-title, h3{
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             .about-intro{
                 margin-top: 8vh;
